@@ -1,0 +1,15 @@
+{
+  "station": "NH15 Crossing Fakirpara Tangni",
+  "district": "Darrang",
+  "state": "Assam",
+  "data_source": "HYDROLOGY_BRIDGE",
+  "data_mode": "DERIVED_HYDROLOGY",
+  "timestamp": "2026-08-25T20:00:00",
+  "current_water_level": 60.65,
+  "prediction": 1,
+  "prediction_label": "HIGH_WATER",
+  "probability": 0.985,
+  "risk_level": "CRITICAL",
+  "escalation_level": "STATE",
+  "status": "ACTIVE"
+}
