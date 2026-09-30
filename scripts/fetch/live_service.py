@@ -133,7 +133,9 @@ class FloodSenseLiveService:
             return pd.DataFrame()
 
     def fetch_realtime_hydrology_bridge(self) -> pd.DataFrame:
-        now = datetime.now()
+        from datetime import timezone
+        IST = timezone(timedelta(hours=5, minutes=30))
+        now = datetime.now(IST).replace(tzinfo=None)
         try:
             logger.info(f'Engaging Real-Time Hydrology Bridge for ({self.LAT}, {self.LON})...')
             
@@ -143,7 +145,7 @@ class FloodSenseLiveService:
             
             current_q = float(discharges[-1]) if discharges and discharges[-1] is not None else 185.0
 
-            url_weather = f'https://api.open-meteo.com/v1/forecast?latitude={self.LAT}&longitude={self.LON}&hourly=precipitation,rain&past_days=2&forecast_days=1'
+            url_weather = f'https://api.open-meteo.com/v1/forecast?latitude={self.LAT}&longitude={self.LON}&hourly=precipitation,rain&past_days=2&forecast_days=1&timezone=Asia%2FKolkata'
             res_weather = requests.get(url_weather, timeout=3).json()
             raw_times = res_weather.get('hourly', {}).get('time', [])
             precip = res_weather.get('hourly', {}).get('precipitation', [])
@@ -235,6 +237,7 @@ class FloodSenseLiveService:
             return pd.DataFrame()
 
         df = df_buffer.copy()
+        df[self.TIME_COL] = pd.to_datetime(df[self.TIME_COL])
         df = df.sort_values(self.TIME_COL).reset_index(drop=True)
 
         df['Current_Water_Level'] = df[self.WATER_COL]
