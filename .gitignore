@@ -54,3 +54,9 @@ ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 .DS_Store
+
+# Reports & PDFs (Private capstone submission deliverables)
+*.pdf
+*report*.html
+report.html
+frontend/report.html
