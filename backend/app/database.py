@@ -1,8 +1,7 @@
 import logging
-import pyodbc
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
-from backend.app.config import settings
+from backend.app.config import settings, PROJECT_ROOT
 
 logger = logging.getLogger("FloodSenseDB")
 
@@ -35,7 +34,7 @@ def init_database_engine():
     except Exception as e:
         logger.warning(f"Microsoft SQL Server not reachable or pyodbc unavailable ({e}).")
         logger.info("Falling back to local SQLite database (floodsense.db) for zero-setup cloud execution.")
-        sqlite_file = settings.PROJECT_ROOT / "floodsense.db"
+        sqlite_file = PROJECT_ROOT / "floodsense.db"
         return create_engine(f"sqlite:///{sqlite_file}", connect_args={"check_same_thread": False})
 
 engine = init_database_engine()

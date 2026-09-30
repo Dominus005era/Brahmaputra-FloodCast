@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     APP_NAME: str = "FloodSense AI Backend"
     APP_VERSION: str = "1.0.0"
     DEBUG: bool = True
+    PROJECT_ROOT: Path = PROJECT_ROOT
 
     # SQL Server connection string
     # Default uses Windows Trusted Authentication to local SQLEXPRESS
