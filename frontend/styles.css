@@ -1,118 +1,117 @@
-/* FloodSense AI — Enterprise Government Theme System */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:wght@400;700&display=swap');
+/* FloodSense AI — Enterprise / Government-Grade Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-serif: 'Merriweather', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  /* Institutional Brand Palette */
+  --gov-primary: #153e67;
+  --gov-primary-hover: #0f2c4a;
+  --gov-secondary: #0284c7;
+  
+  /* Light Mode Tokens */
+  --bg-page: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-subtle: #f1f5f9;
+  --border-color: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-subtle: #94a3b8;
+  
+  /* Semantic Badges */
+  --risk-low: #15803d;
+  --risk-moderate: #b45309;
+  --risk-high: #c2410c;
+  --risk-critical: #b91c1c;
+}
+
+.dark {
+  /* Dark Mode Tokens */
+  --bg-page: #0a101d;
+  --bg-surface: #111a2e;
+  --bg-surface-subtle: #17233c;
+  --border-color: #1e2e4a;
+  --border-strong: #2a3f64;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
 }
 
 body {
   font-family: var(--font-sans);
-  transition: background-color 0.25s ease, color 0.25s ease;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Light Theme Variables */
-html:not(.dark) {
-  --bg-primary: #f8fafc;
-  --bg-surface: #ffffff;
-  --bg-surface-elevated: #ffffff;
-  --border-color: #e2e8f0;
-  --border-muted: #f1f5f9;
-  --text-main: #0f172a;
-  --text-muted: #475569;
-  --text-dim: #64748b;
-  --brand-navy: #003366;
-  --brand-blue: #0284c7;
+.font-mono {
+  font-family: var(--font-mono);
 }
 
-/* Dark Theme Variables */
-html.dark {
-  --bg-primary: #070f1e;
-  --bg-surface: #0f1f38;
-  --bg-surface-elevated: #15294b;
-  --border-color: #1e3a5f;
-  --border-muted: #132742;
-  --text-main: #f8fafc;
-  --text-muted: #cbd5e1;
-  --text-dim: #94a3b8;
-  --brand-navy: #38bdf8;
-  --brand-blue: #0284c7;
-}
-
-/* Custom Scrollbars */
+/* Custom Institutional Scrollbars */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-html:not(.dark) ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #cbd5e1;
-  border-radius: 9999px;
+  border-radius: 4px;
 }
-html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+.dark ::-webkit-scrollbar-thumb {
+  background: #1e2e4a;
+}
+::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
-html.dark ::-webkit-scrollbar-thumb {
-  background: #1e3a5f;
-  border-radius: 9999px;
-}
-html.dark ::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6;
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #334e7a;
 }
 
-/* Leaflet Container Styling */
+/* Leaflet Container Professional Override */
 .leaflet-container {
   font-family: var(--font-sans);
-  border-radius: 0.75rem;
-}
-html:not(.dark) .leaflet-container {
   background: #f1f5f9;
 }
-html.dark .leaflet-container {
-  background: #070f1e;
+.dark .leaflet-container {
+  background: #0a101d;
 }
 
-/* Leaflet Popup Styling */
+/* Custom Leaflet Tooltip / Popup Styling */
 .leaflet-popup-content-wrapper {
-  border-radius: 0.75rem;
-  padding: 0.25rem;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  background: var(--bg-surface) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color);
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  padding: 4px !important;
 }
-html:not(.dark) .leaflet-popup-content-wrapper {
-  background: #ffffff;
-  color: #0f172a;
-  border: 1px solid #e2e8f0;
-}
-html.dark .leaflet-popup-content-wrapper {
-  background: #0f1f38;
-  color: #f8fafc;
-  border: 1px solid #1e3a5f;
-}
-html:not(.dark) .leaflet-popup-tip {
-  background: #ffffff;
-}
-html.dark .leaflet-popup-tip {
-  background: #0f1f38;
+.leaflet-popup-tip {
+  background: var(--bg-surface) !important;
 }
 
-/* Tricolor Government Ribbon */
-.gov-tricolor-bar {
-  background: linear-gradient(90deg, #FF9933 0%, #FF9933 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #138808 66.6%, #138808 100%);
-  height: 3px;
-  width: 100%;
+/* Interactive Focus Rings */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
 
-/* Animated Pulse Rings */
-@keyframes criticalPulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
-  }
+/* Clean Transitions */
+.transition-smooth {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.pulse-critical-ring {
-  animation: criticalPulse 2.5s infinite ease-in-out;
+
+/* Print Optimization */
+@media print {
+  aside, header button, #more-submenu, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
 }
