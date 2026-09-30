@@ -18,12 +18,12 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   
-  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <!-- Google Fonts: Plus Jakarta Sans, Outfit, and Space Grotesk (Vibrant Modern Typography) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Custom Institutional Stylesheet -->
+  <!-- Custom Vibrant Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
   
   <script>
@@ -32,22 +32,23 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Outfit"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'ui-monospace', 'monospace'],
           },
           colors: {
             gov: {
-              50: '#f0f5fa',
-              100: '#dde8f3',
-              200: '#bfd5e8',
-              300: '#91b9d9',
-              400: '#5e98c7',
-              500: '#3d7cb5',
-              600: '#2b6299',
-              700: '#234e7c',
-              800: '#153e67',
-              900: '#112f4e',
-              950: '#0b1c30',
+              50: '#f0f6fc',
+              100: '#e1eef9',
+              200: '#c3ddf3',
+              300: '#94c4eb',
+              400: '#5ea6df',
+              500: '#3888cf',
+              600: '#276eb3',
+              700: '#205791',
+              800: '#1e4b7a',
+              900: '#1d3f66',
+              950: '#132842',
             }
           }
         }
@@ -55,51 +56,65 @@
     };
   </script>
 </head>
-<body class="bg-slate-50 dark:bg-[#0a101d] text-slate-900 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-blue-700 selection:text-white transition-colors duration-150">
+<body class="bg-slate-50 dark:bg-[#080e1b] text-slate-900 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-blue-600 selection:text-white transition-colors duration-200">
 
   <!-- ========================================================================= -->
-  <!-- 1. INSTITUTIONAL LANDING PAGE VIEW -->
+  <!-- 1. VIBRANT INSTITUTIONAL LANDING PAGE VIEW -->
   <!-- ========================================================================= -->
   <section id="view-landing" class="app-view min-h-screen flex flex-col justify-between">
     
-    <!-- Top Institutional Header -->
-    <header class="w-full bg-white dark:bg-[#111a2e] border-b border-slate-200 dark:border-slate-800 sticky top-0 z-30 shadow-xs">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+    <!-- Top Sleek Header with Accent Beam -->
+    <header class="w-full glass-header border-b border-slate-200/80 dark:border-slate-800/80 sticky top-0 z-30 shadow-xs">
+      <!-- Micro-gradient accent beam -->
+      <div class="h-[2px] w-full bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-600"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         <!-- Left: Project Identity & Emblem -->
-        <div class="flex items-center gap-3.5 cursor-pointer" onclick="navigateTo('landing')">
-          <div class="w-10 h-10 rounded-lg bg-gov-800 text-white flex items-center justify-center font-bold shadow-xs">
-            <i data-lucide="shield-alert" class="w-5 h-5 text-sky-300"></i>
+        <div class="flex items-center gap-3.5 cursor-pointer group" onclick="navigateTo('landing')">
+          <div class="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-700 via-sky-600 to-indigo-700 text-white flex items-center justify-center font-bold shadow-md shadow-blue-600/20 ring-1 ring-white/30 group-hover:scale-105 group-hover:shadow-blue-500/30 transition-all duration-200">
+            <i data-lucide="waves" class="w-6 h-6 text-sky-100"></i>
+            <div class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-slate-900 animate-pulse"></div>
           </div>
           <div>
-            <div class="flex items-center gap-2">
-              <span class="text-base font-bold tracking-tight text-slate-900 dark:text-white">Brahmaputra FloodCast</span>
-              <span class="px-1.5 py-0.5 text-[10px] font-bold tracking-wide uppercase bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 border border-sky-200 dark:border-sky-800 rounded">Public Beta</span>
+            <div class="flex items-center gap-2.5">
+              <span class="font-display text-xl sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white">
+                Brahmaputra <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600 dark:from-sky-400 dark:via-cyan-300 dark:to-blue-400">FloodCast</span>
+              </span>
+              <span class="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-blue-50 dark:bg-sky-950/80 text-blue-700 dark:text-sky-300 border border-blue-200/80 dark:border-sky-800/80 shadow-2xs">
+                AI Early Warning
+              </span>
             </div>
-            <p class="text-xs text-slate-500 dark:text-slate-400">Hydrological Early Warning Platform • Assam Basin</p>
+            <p class="text-[11px] font-medium text-slate-500 dark:text-slate-400 flex items-center gap-1.5 mt-0.5">
+              <span>National Hydrological Surveillance</span>
+              <span class="text-slate-300 dark:text-slate-600">•</span>
+              <span class="text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Live Ingestion Active
+              </span>
+            </p>
           </div>
         </div>
 
-        <!-- Center Nav Items -->
-        <nav class="hidden md:flex items-center gap-1">
-          <button onclick="navigateTo('landing')" class="px-3.5 py-2 rounded-md text-xs font-semibold text-gov-800 dark:text-sky-400 bg-slate-100 dark:bg-slate-800/80">Home</button>
-          <button onclick="openAboutModal()" class="px-3.5 py-2 rounded-md text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors">About System</button>
-          <button onclick="navigateTo('learn-more')" class="px-3.5 py-2 rounded-md text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors">Methodology</button>
-          <button onclick="openFeaturesModal()" class="px-3.5 py-2 rounded-md text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors">Specifications</button>
+        <!-- Center Nav Items (Floating Modern Pill Bar) -->
+        <nav class="hidden md:flex items-center gap-1 bg-slate-100/90 dark:bg-slate-800/80 backdrop-blur-md p-1.5 rounded-full border border-slate-200/80 dark:border-slate-700/80 shadow-inner">
+          <button onclick="navigateTo('landing')" class="px-4 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-sky-600 shadow-xs transition-all">Home</button>
+          <button onclick="openAboutModal()" class="px-4 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/70 transition-all">About System</button>
+          <button onclick="navigateTo('learn-more')" class="px-4 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/70 transition-all">Methodology</button>
+          <button onclick="openFeaturesModal()" class="px-4 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/70 transition-all">Architecture</button>
         </nav>
 
-        <!-- Right Controls: Theme Toggle & Sign In -->
+        <!-- Right Controls: Theme Toggle & Sign In & Primary Action -->
         <div class="flex items-center gap-2.5">
-          <button onclick="toggleTheme()" class="theme-toggle-btn p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle theme">
+          <button onclick="toggleTheme()" class="theme-toggle-btn p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200/80 dark:hover:bg-slate-700 border border-slate-200/70 dark:border-slate-700/70 transition-all hover:scale-105 shadow-2xs" title="Toggle theme">
             <i data-lucide="moon" class="w-4 h-4"></i>
           </button>
           
-          <button onclick="openSignInModal()" class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-[#17233c] border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-2xs flex items-center gap-2">
-            <i data-lucide="user-check" class="w-3.5 h-3.5 text-gov-600 dark:text-sky-400"></i>
+          <button onclick="openSignInModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all hover:border-blue-400 dark:hover:border-sky-500 shadow-2xs flex items-center gap-2">
+            <i data-lucide="user-check" class="w-3.5 h-3.5 text-blue-600 dark:text-sky-400"></i>
             <span>Operator Sign In</span>
           </button>
 
-          <button onclick="navigateTo('location-gate')" class="px-4 py-2 rounded-lg text-xs font-semibold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 transition-colors shadow-2xs flex items-center gap-1.5">
+          <button onclick="navigateTo('location-gate')" class="px-4.5 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 shadow-md shadow-blue-600/20 hover:shadow-blue-600/35 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5">
             <span>Access Console</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </button>
@@ -111,28 +126,31 @@
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-16">
       
       <!-- Institutional Hero Section -->
-      <section class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-8 sm:p-12 shadow-xs">
-        <div class="max-w-4xl space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 dark:bg-sky-950/70 text-blue-800 dark:text-sky-300 border border-blue-200 dark:border-sky-800">
+      <section class="bg-white dark:bg-[#0f1a2e] border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-8 sm:p-12 shadow-sm relative overflow-hidden">
+        <!-- Subtle background glow -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-500/10 dark:bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-4xl space-y-6 relative z-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-50 dark:bg-sky-950/70 text-blue-800 dark:text-sky-300 border border-blue-200 dark:border-sky-800">
             <span class="w-2 h-2 rounded-full bg-blue-600 dark:bg-sky-400 animate-pulse"></span>
             DISASTER MANAGEMENT & RECOGNISED RIVER TELEMETRY • ASSAM REACH
           </div>
 
-          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-            Hydrological Early Warning & River Stage Forecasting
+          <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+            Hydrological Early Warning & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600 dark:from-sky-400 dark:via-cyan-300 dark:to-blue-400">River Stage Forecasting</span>
           </h1>
 
-          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal max-w-3xl">
             Brahmaputra FloodCast couples real-time hydrometric observation streams with trained machine learning classifiers. The system provides authorities, emergency personnel, and regional disaster response centers with a calibrated 6-hour advance warning before critical river stages are breached.
           </p>
 
           <!-- Primary CTAs -->
           <div class="pt-2 flex flex-wrap items-center gap-3.5">
-            <button onclick="navigateTo('location-gate')" class="px-6 py-3 rounded-lg text-sm font-semibold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-xs transition-colors flex items-center gap-2">
+            <button onclick="navigateTo('location-gate')" class="px-6 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 shadow-md shadow-blue-600/25 transition-all hover:-translate-y-0.5 flex items-center gap-2">
               <i data-lucide="gauge" class="w-4 h-4"></i>
               <span>Enter Operational Dashboard</span>
             </button>
-            <button onclick="navigateTo('learn-more')" class="px-5 py-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-[#17233c] border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 shadow-2xs transition-colors flex items-center gap-2">
+            <button onclick="navigateTo('learn-more')" class="px-5 py-3 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-[#16243d] border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 shadow-2xs transition-all flex items-center gap-2">
               <i data-lucide="book-open" class="w-4 h-4 text-slate-500"></i>
               <span>System Methodology</span>
             </button>
@@ -141,19 +159,19 @@
           <!-- Institutional Verification Highlights -->
           <div class="pt-6 border-t border-slate-100 dark:border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
             <div>
-              <div class="font-mono font-bold text-slate-900 dark:text-white text-sm">6 Hours</div>
+              <div class="font-display font-extrabold text-slate-900 dark:text-white text-base">6 Hours</div>
               <div class="text-slate-500 dark:text-slate-400 mt-0.5">Forecast Lead Time</div>
             </div>
             <div>
-              <div class="font-mono font-bold text-slate-900 dark:text-white text-sm">94.2%</div>
+              <div class="font-display font-extrabold text-slate-900 dark:text-white text-base">94.2%</div>
               <div class="text-slate-500 dark:text-slate-400 mt-0.5">Validation Accuracy</div>
             </div>
             <div>
-              <div class="font-mono font-bold text-slate-900 dark:text-white text-sm">NH15 Tangni</div>
+              <div class="font-display font-extrabold text-slate-900 dark:text-white text-base">NH15 Tangni</div>
               <div class="text-slate-500 dark:text-slate-400 mt-0.5">Active Gauge Station</div>
             </div>
             <div>
-              <div class="font-mono font-bold text-slate-900 dark:text-white text-sm">ASDMA / DEOC</div>
+              <div class="font-display font-extrabold text-slate-900 dark:text-white text-base">ASDMA / DEOC</div>
               <div class="text-slate-500 dark:text-slate-400 mt-0.5">Escalation Alignment</div>
             </div>
           </div>
@@ -164,10 +182,10 @@
       <section class="space-y-6">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
           <div>
-            <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Five-Stage Early Warning Architecture</h2>
+            <h2 class="font-display text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Five-Stage Early Warning Architecture</h2>
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">End-to-end telemetry ingestion, machine learning inference, and emergency protocol escalation</p>
           </div>
-          <button onclick="navigateTo('learn-more')" class="text-xs font-semibold text-gov-700 dark:text-sky-400 hover:underline flex items-center gap-1">
+          <button onclick="navigateTo('learn-more')" class="text-xs font-semibold text-blue-600 dark:text-sky-400 hover:underline flex items-center gap-1">
             <span>Technical Documentation</span>
             <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
           </button>
@@ -175,62 +193,62 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-5 gap-4">
           <!-- Stage 01 -->
-          <div onclick="navigateTo('learn-more')" class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:border-slate-400 dark:hover:border-slate-600 transition-colors cursor-pointer group">
+          <div onclick="navigateTo('learn-more')" class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:border-blue-400 dark:hover:border-sky-500 hover:shadow-md transition-all cursor-pointer group">
             <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-xs font-bold text-slate-400 group-hover:text-gov-800 dark:group-hover:text-sky-400">01</span>
-              <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300">
-                <i data-lucide="droplet" class="w-4 h-4 text-gov-700 dark:text-sky-400"></i>
+              <span class="font-mono text-xs font-bold text-slate-400 group-hover:text-blue-600 dark:group-hover:text-sky-400">01</span>
+              <div class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 group-hover:bg-blue-50 dark:group-hover:bg-sky-950/60 transition-colors">
+                <i data-lucide="droplet" class="w-4 h-4 text-blue-600 dark:text-sky-400"></i>
               </div>
             </div>
-            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Sense</h3>
+            <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white mb-1">Sense</h3>
             <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Continuous sensor telemetry captures real-time water levels along key river reaches.</p>
           </div>
 
           <!-- Stage 02 -->
-          <div onclick="navigateTo('learn-more')" class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:border-slate-400 dark:hover:border-slate-600 transition-colors cursor-pointer group">
+          <div onclick="navigateTo('learn-more')" class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:border-blue-400 dark:hover:border-sky-500 hover:shadow-md transition-all cursor-pointer group">
             <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-xs font-bold text-slate-400 group-hover:text-gov-800 dark:group-hover:text-sky-400">02</span>
-              <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300">
-                <i data-lucide="cpu" class="w-4 h-4 text-gov-700 dark:text-sky-400"></i>
+              <span class="font-mono text-xs font-bold text-slate-400 group-hover:text-blue-600 dark:group-hover:text-sky-400">02</span>
+              <div class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 group-hover:bg-blue-50 dark:group-hover:bg-sky-950/60 transition-colors">
+                <i data-lucide="cpu" class="w-4 h-4 text-blue-600 dark:text-sky-400"></i>
               </div>
             </div>
-            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Ingest</h3>
+            <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white mb-1">Ingest</h3>
             <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Automated pipelines parse, clean, and validate hourly hydrographs and precipitation feeds.</p>
           </div>
 
           <!-- Stage 03 -->
-          <div onclick="navigateTo('learn-more')" class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:border-slate-400 dark:hover:border-slate-600 transition-colors cursor-pointer group">
+          <div onclick="navigateTo('learn-more')" class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:border-blue-400 dark:hover:border-sky-500 hover:shadow-md transition-all cursor-pointer group">
             <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-xs font-bold text-slate-400 group-hover:text-gov-800 dark:group-hover:text-sky-400">03</span>
-              <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300">
-                <i data-lucide="brain-circuit" class="w-4 h-4 text-gov-700 dark:text-sky-400"></i>
+              <span class="font-mono text-xs font-bold text-slate-400 group-hover:text-blue-600 dark:group-hover:text-sky-400">03</span>
+              <div class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 group-hover:bg-blue-50 dark:group-hover:bg-sky-950/60 transition-colors">
+                <i data-lucide="brain-circuit" class="w-4 h-4 text-blue-600 dark:text-sky-400"></i>
               </div>
             </div>
-            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Predict</h3>
+            <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white mb-1">Predict</h3>
             <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Ensemble ML models project high-water likelihood 6 hours forward with calibrated probabilities.</p>
           </div>
 
           <!-- Stage 04 -->
-          <div onclick="navigateTo('learn-more')" class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:border-slate-400 dark:hover:border-slate-600 transition-colors cursor-pointer group">
+          <div onclick="navigateTo('learn-more')" class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:border-blue-400 dark:hover:border-sky-500 hover:shadow-md transition-all cursor-pointer group">
             <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-xs font-bold text-slate-400 group-hover:text-gov-800 dark:group-hover:text-sky-400">04</span>
-              <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300">
-                <i data-lucide="activity" class="w-4 h-4 text-gov-700 dark:text-sky-400"></i>
+              <span class="font-mono text-xs font-bold text-slate-400 group-hover:text-blue-600 dark:group-hover:text-sky-400">04</span>
+              <div class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 group-hover:bg-blue-50 dark:group-hover:bg-sky-950/60 transition-colors">
+                <i data-lucide="activity" class="w-4 h-4 text-blue-600 dark:text-sky-400"></i>
               </div>
             </div>
-            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Calibrate</h3>
+            <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white mb-1">Calibrate</h3>
             <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Outputs are mapped against established Danger Level benchmarks (60.00m threshold).</p>
           </div>
 
           <!-- Stage 05 -->
-          <div onclick="navigateTo('learn-more')" class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:border-slate-400 dark:hover:border-slate-600 transition-colors cursor-pointer group">
+          <div onclick="navigateTo('learn-more')" class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:border-blue-400 dark:hover:border-sky-500 hover:shadow-md transition-all cursor-pointer group">
             <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-xs font-bold text-slate-400 group-hover:text-gov-800 dark:group-hover:text-sky-400">05</span>
-              <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300">
-                <i data-lucide="bell" class="w-4 h-4 text-gov-700 dark:text-sky-400"></i>
+              <span class="font-mono text-xs font-bold text-slate-400 group-hover:text-blue-600 dark:group-hover:text-sky-400">05</span>
+              <div class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 group-hover:bg-blue-50 dark:group-hover:bg-sky-950/60 transition-colors">
+                <i data-lucide="bell" class="w-4 h-4 text-blue-600 dark:text-sky-400"></i>
               </div>
             </div>
-            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Alert</h3>
+            <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white mb-1">Alert</h3>
             <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Action directives route automatically to DEOC disaster teams and regional stakeholders.</p>
           </div>
         </div>
@@ -239,53 +257,53 @@
       <!-- Operational Capabilities Grid -->
       <section class="space-y-6">
         <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
-          <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">System Capabilities & Public Assets</h2>
+          <h2 class="font-display text-2xl font-bold tracking-tight text-slate-900 dark:text-white">System Capabilities & Public Assets</h2>
           <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Operational toolsets provided for disaster management teams, hydrologists, and observers</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-3">
-            <div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-gov-700 dark:text-sky-400">
+          <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-3 shadow-2xs hover:shadow-sm transition-shadow">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-sky-950/60 flex items-center justify-center text-blue-600 dark:text-sky-400">
               <i data-lucide="map-pin" class="w-5 h-5"></i>
             </div>
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">Regional GIS Telemetry</h3>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Regional GIS Telemetry</h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Interactive map overlays monitoring stations across the Brahmaputra valley with basin-level boundary indicators and catchment status.
             </p>
             <div class="pt-2">
-              <button onclick="navigateTo('location-gate')" class="text-xs font-semibold text-gov-700 dark:text-sky-400 hover:underline flex items-center gap-1">
+              <button onclick="navigateTo('location-gate')" class="text-xs font-bold text-blue-600 dark:text-sky-400 hover:underline flex items-center gap-1">
                 <span>View GIS Network</span>
                 <i data-lucide="arrow-right" class="w-3 h-3"></i>
               </button>
             </div>
           </div>
 
-          <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-3">
-            <div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-gov-700 dark:text-sky-400">
+          <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-3 shadow-2xs hover:shadow-sm transition-shadow">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-sky-950/60 flex items-center justify-center text-blue-600 dark:text-sky-400">
               <i data-lucide="sliders" class="w-5 h-5"></i>
             </div>
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">Scenario Simulator</h3>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Scenario Simulator</h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Operators can test synthetic river stages against the inference model to simulate flash floods, monsoonal surges, and overtopping risks.
             </p>
             <div class="pt-2">
-              <button onclick="navigateTo('location-gate')" class="text-xs font-semibold text-gov-700 dark:text-sky-400 hover:underline flex items-center gap-1">
+              <button onclick="navigateTo('location-gate')" class="text-xs font-bold text-blue-600 dark:text-sky-400 hover:underline flex items-center gap-1">
                 <span>Open Sandbox</span>
                 <i data-lucide="arrow-right" class="w-3 h-3"></i>
               </button>
             </div>
           </div>
 
-          <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-3">
-            <div class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-gov-700 dark:text-sky-400">
+          <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-3 shadow-2xs hover:shadow-sm transition-shadow">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-sky-950/60 flex items-center justify-center text-blue-600 dark:text-sky-400">
               <i data-lucide="database" class="w-5 h-5"></i>
             </div>
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">Hydrometric Logs & CSV Export</h3>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Hydrometric Logs & CSV Export</h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Full filterable audit logs of every telemetry record and model prediction with one-click export for research and incident reviews.
             </p>
             <div class="pt-2">
-              <button onclick="navigateTo('location-gate')" class="text-xs font-semibold text-gov-700 dark:text-sky-400 hover:underline flex items-center gap-1">
+              <button onclick="navigateTo('location-gate')" class="text-xs font-bold text-blue-600 dark:text-sky-400 hover:underline flex items-center gap-1">
                 <span>Access Logs</span>
                 <i data-lucide="arrow-right" class="w-3 h-3"></i>
               </button>
@@ -295,13 +313,13 @@
       </section>
 
       <!-- Institutional Station Callout -->
-      <section class="bg-slate-100 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60 rounded-xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <section class="bg-gradient-to-r from-slate-100 to-blue-50/40 dark:from-[#16243d] dark:to-[#0f1a2e] border border-slate-200 dark:border-slate-700/60 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-2xs">
         <div class="space-y-1">
-          <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Active Operational Gauge</div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">NH15 Crossing Fakirpara Tangni (Tangni River)</h3>
+          <div class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-sky-400">Active Operational Gauge</div>
+          <h3 class="font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-white">NH15 Crossing Fakirpara Tangni (Tangni River)</h3>
           <p class="text-xs text-slate-600 dark:text-slate-300">Darrang District, Assam • Basin Reference: Brahmaputra Middle Reach • Gauge ID: AS-DAR-004</p>
         </div>
-        <button onclick="navigateTo('location-gate')" class="px-5 py-2.5 rounded-lg text-xs font-semibold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-xs transition-colors shrink-0">
+        <button onclick="navigateTo('location-gate')" class="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 shadow-md shadow-blue-600/20 transition-all shrink-0">
           Open Station Console
         </button>
       </section>
@@ -309,31 +327,31 @@
     </main>
 
     <!-- Institutional Footer -->
-    <footer class="bg-white dark:bg-[#111a2e] border-t border-slate-200 dark:border-slate-800 mt-16 py-10">
+    <footer class="bg-white dark:bg-[#0f1a2e] border-t border-slate-200 dark:border-slate-800 mt-16 py-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs">
           <div class="space-y-2 md:col-span-2">
             <div class="flex items-center gap-2">
-              <div class="w-6 h-6 rounded bg-gov-800 text-white flex items-center justify-center font-bold text-xs">
-                <i data-lucide="waves" class="w-3.5 h-3.5 text-sky-300"></i>
+              <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-600 to-sky-600 text-white flex items-center justify-center font-bold text-xs">
+                <i data-lucide="waves" class="w-4 h-4 text-sky-200"></i>
               </div>
-              <span class="font-bold text-slate-900 dark:text-white text-sm">Brahmaputra FloodCast</span>
+              <span class="font-display font-extrabold text-slate-900 dark:text-white text-base">Brahmaputra FloodCast</span>
             </div>
             <p class="text-slate-500 dark:text-slate-400 max-w-md leading-relaxed">
               Open digital public infrastructure prototype for flood risk assessment, early warning, and disaster mitigation along the Brahmaputra River system in Assam, India.
             </p>
           </div>
           <div class="space-y-2">
-            <div class="font-bold uppercase tracking-wider text-slate-900 dark:text-white">Platform Links</div>
+            <div class="font-display font-bold uppercase tracking-wider text-slate-900 dark:text-white">Platform Links</div>
             <ul class="space-y-1.5 text-slate-500 dark:text-slate-400">
-              <li><button onclick="navigateTo('landing')" class="hover:text-slate-900 dark:hover:text-white">Home Portal</button></li>
-              <li><button onclick="navigateTo('learn-more')" class="hover:text-slate-900 dark:hover:text-white">Methodology & Models</button></li>
-              <li><button onclick="openAboutModal()" class="hover:text-slate-900 dark:hover:text-white">About the Initiative</button></li>
-              <li><button onclick="openFeaturesModal()" class="hover:text-slate-900 dark:hover:text-white">System Architecture</button></li>
+              <li><button onclick="navigateTo('landing')" class="hover:text-blue-600 dark:hover:text-white transition-colors">Home Portal</button></li>
+              <li><button onclick="navigateTo('learn-more')" class="hover:text-blue-600 dark:hover:text-white transition-colors">Methodology & Models</button></li>
+              <li><button onclick="openAboutModal()" class="hover:text-blue-600 dark:hover:text-white transition-colors">About the Initiative</button></li>
+              <li><button onclick="openFeaturesModal()" class="hover:text-blue-600 dark:hover:text-white transition-colors">System Architecture</button></li>
             </ul>
           </div>
           <div class="space-y-2">
-            <div class="font-bold uppercase tracking-wider text-slate-900 dark:text-white">Governance & Data</div>
+            <div class="font-display font-bold uppercase tracking-wider text-slate-900 dark:text-white">Governance & Data</div>
             <p class="text-slate-500 dark:text-slate-400 leading-relaxed">
               Real-time telemetry sourced via GLoFAS / NWDP Hydrology Bridge. All predictions subject to automated validation against field danger levels.
             </p>
@@ -352,22 +370,23 @@
   <!-- ========================================================================= -->
   <section id="view-learn-more" class="app-view min-h-screen flex flex-col justify-between hidden">
     <!-- Header -->
-    <header class="w-full bg-white dark:bg-[#111a2e] border-b border-slate-200 dark:border-slate-800 sticky top-0 z-30 shadow-xs">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
-        <div class="flex items-center gap-3 cursor-pointer" onclick="navigateTo('landing')">
-          <div class="w-9 h-9 rounded-lg bg-gov-800 text-white flex items-center justify-center font-bold">
+    <header class="w-full glass-header border-b border-slate-200/80 dark:border-slate-800/80 sticky top-0 z-30 shadow-xs">
+      <div class="h-[2px] w-full bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-600"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3 cursor-pointer group" onclick="navigateTo('landing')">
+          <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 group-hover:bg-blue-50 dark:group-hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center font-bold transition-colors">
             <i data-lucide="arrow-left" class="w-4 h-4"></i>
           </div>
           <div>
-            <div class="text-sm font-bold text-slate-900 dark:text-white">Return to Home</div>
+            <div class="font-display text-sm font-bold text-slate-900 dark:text-white">Return to Home</div>
             <div class="text-xs text-slate-500 dark:text-slate-400">Brahmaputra FloodCast Documentation</div>
           </div>
         </div>
         <div class="flex items-center gap-2">
-          <button onclick="toggleTheme()" class="theme-toggle-btn p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <button onclick="toggleTheme()" class="theme-toggle-btn p-2.5 rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200/70 dark:border-slate-700/70 transition-colors">
             <i data-lucide="moon" class="w-4 h-4"></i>
           </button>
-          <button onclick="navigateTo('location-gate')" class="px-4 py-2 rounded-lg text-xs font-semibold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 transition-colors">
+          <button onclick="navigateTo('location-gate')" class="px-4.5 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 transition-colors shadow-xs">
             Access Dashboard
           </button>
         </div>
@@ -377,8 +396,8 @@
     <!-- Methodology Content -->
     <main class="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
       <div class="space-y-3">
-        <div class="text-xs font-semibold uppercase tracking-wider text-gov-700 dark:text-sky-400">System Methodology & Scientific Architecture</div>
-        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+        <div class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-sky-400">System Methodology & Scientific Architecture</div>
+        <h1 class="font-display text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white">
           How Brahmaputra FloodCast Forecasts River Surges
         </h1>
         <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -388,54 +407,54 @@
 
       <!-- Deep Dive 5-Stage Architecture -->
       <div class="space-y-6">
-        <h2 class="text-lg font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">The Five-Stage Early Warning Pipeline</h2>
+        <h2 class="font-display text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">The Five-Stage Early Warning Pipeline</h2>
 
         <div class="space-y-4">
-          <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-2">
-            <div class="flex items-center gap-2 font-mono text-xs font-bold text-gov-700 dark:text-sky-400">
+          <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-2">
+            <div class="flex items-center gap-2 font-mono text-xs font-bold text-blue-600 dark:text-sky-400">
               <span>STAGE 01</span> • SENSE
             </div>
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">Continuous Sensor Telemetry</h3>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Continuous Sensor Telemetry</h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Hydrological gauge stations record instantaneous river stage (meters above mean sea level) at calibrated cross-sections. Telemetry is sampled continuously and bundled into hourly time series.
             </p>
           </div>
 
-          <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-2">
-            <div class="flex items-center gap-2 font-mono text-xs font-bold text-gov-700 dark:text-sky-400">
+          <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-2">
+            <div class="flex items-center gap-2 font-mono text-xs font-bold text-blue-600 dark:text-sky-400">
               <span>STAGE 02</span> • INGEST
             </div>
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">Automated Ingestion & Feature Derivation</h3>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Automated Ingestion & Feature Derivation</h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Raw sensor feeds pass through automated validation routines to filter gauge noise and transmission dropouts. Rolling features are engineered in real time: 3-hour stage differentials (\(\Delta H / \Delta t\)), 6-hour moving averages, and upstream catchment precipitation accumulations.
+              Raw sensor feeds pass through automated validation routines to filter gauge noise and transmission dropouts. Rolling features are engineered in real time: 3-hour stage differentials, 6-hour moving averages, and upstream catchment precipitation accumulations.
             </p>
           </div>
 
-          <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-2">
-            <div class="flex items-center gap-2 font-mono text-xs font-bold text-gov-700 dark:text-sky-400">
+          <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-2">
+            <div class="flex items-center gap-2 font-mono text-xs font-bold text-blue-600 dark:text-sky-400">
               <span>STAGE 03</span> • PREDICT
             </div>
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">Machine Learning Classification (+6h Lead Time)</h3>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Machine Learning Classification (+6h Lead Time)</h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               A trained Gradient Boosting / Random Forest ensemble evaluates current hydrological vectors to compute the probability of river stage exceeding the critical threshold (60.00m) within the next 6 hours. Model validation yields 94.2% test accuracy and balanced precision/recall metrics.
             </p>
           </div>
 
-          <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-2">
-            <div class="flex items-center gap-2 font-mono text-xs font-bold text-gov-700 dark:text-sky-400">
+          <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-2">
+            <div class="flex items-center gap-2 font-mono text-xs font-bold text-blue-600 dark:text-sky-400">
               <span>STAGE 04</span> • CALIBRATE
             </div>
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">Threshold Calibration & Risk Stratification</h3>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Threshold Calibration & Risk Stratification</h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Model probabilities are mapped to institutional risk categories: LOW (&lt;40%), MODERATE (40–69%), HIGH (70–89%), and CRITICAL (&ge;90%). Risk levels are cross-referenced with local embankment geometries to determine overtopping hazard.
             </p>
           </div>
 
-          <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-2">
-            <div class="flex items-center gap-2 font-mono text-xs font-bold text-gov-700 dark:text-sky-400">
+          <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-2">
+            <div class="flex items-center gap-2 font-mono text-xs font-bold text-blue-600 dark:text-sky-400">
               <span>STAGE 05</span> • ALERT
             </div>
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">Emergency Protocol & Multi-Tier Escalation</h3>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Emergency Protocol & Multi-Tier Escalation</h3>
             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Escalation directives trigger automatically based on calculated severity: NONE (routine), LOCAL (Circle Officer & Panchayat alert), DISTRICT (District Disaster Management Authority DEOC mobilization), or STATE (Assam State Disaster Management Authority - ASDMA incident management).
             </p>
@@ -448,14 +467,14 @@
         <button onclick="navigateTo('landing')" class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:underline">
           ← Back to Overview
         </button>
-        <button onclick="navigateTo('location-gate')" class="px-5 py-2.5 rounded-lg text-xs font-semibold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-xs transition-colors">
+        <button onclick="navigateTo('location-gate')" class="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 shadow-xs transition-colors">
           Enter Operational Console
         </button>
       </div>
     </main>
 
     <!-- Simple Footer -->
-    <footer class="bg-white dark:bg-[#111a2e] border-t border-slate-200 dark:border-slate-800 py-6 text-center text-xs text-slate-500 dark:text-slate-400">
+    <footer class="bg-white dark:bg-[#0f1a2e] border-t border-slate-200 dark:border-slate-800 py-6 text-center text-xs text-slate-500 dark:text-slate-400">
       Brahmaputra FloodCast • Technical Methodology Documentation
     </footer>
   </section>
@@ -465,28 +484,30 @@
   <!-- ========================================================================= -->
   <section id="view-location-gate" class="app-view min-h-screen flex flex-col justify-between hidden">
     <!-- Header -->
-    <header class="w-full bg-white dark:bg-[#111a2e] border-b border-slate-200 dark:border-slate-800 h-18 flex items-center px-4 sm:px-8 justify-between shadow-xs">
-      <div class="flex items-center gap-3 cursor-pointer" onclick="navigateTo('landing')">
-        <div class="w-8 h-8 rounded-lg bg-gov-800 text-white flex items-center justify-center font-bold">
-          <i data-lucide="waves" class="w-4 h-4 text-sky-300"></i>
+    <header class="w-full glass-header border-b border-slate-200/80 dark:border-slate-800/80 h-20 flex items-center px-4 sm:px-8 justify-between shadow-xs">
+      <div class="flex items-center gap-3 cursor-pointer group" onclick="navigateTo('landing')">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-700 via-sky-600 to-indigo-700 text-white flex items-center justify-center font-bold shadow-md shadow-blue-600/20 ring-1 ring-white/30 group-hover:scale-105 transition-transform">
+          <i data-lucide="waves" class="w-5 h-5 text-sky-200"></i>
         </div>
-        <span class="text-sm font-bold text-slate-900 dark:text-white">Brahmaputra FloodCast</span>
+        <span class="font-display text-lg font-black tracking-tight text-slate-900 dark:text-white">
+          Brahmaputra <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500 dark:from-sky-400 dark:to-cyan-300">FloodCast</span>
+        </span>
       </div>
-      <button onclick="toggleTheme()" class="theme-toggle-btn p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+      <button onclick="toggleTheme()" class="theme-toggle-btn p-2.5 rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200/70 dark:border-slate-700/70 transition-colors">
         <i data-lucide="moon" class="w-4 h-4"></i>
       </button>
     </header>
 
     <!-- Center Station Confirmation Card -->
     <main class="flex-1 flex items-center justify-center px-4 py-12">
-      <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl max-w-lg w-full p-8 shadow-xs space-y-6">
+      <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200/80 dark:border-slate-800/80 rounded-2xl max-w-lg w-full p-8 shadow-sm space-y-6">
         
         <div class="space-y-2">
-          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-semibold bg-emerald-50 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400"></span>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-50 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-pulse"></span>
             ACTIVE TELEMETRY STATION
           </div>
-          <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+          <h2 class="font-display text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
             Confirm Monitoring Station
           </h2>
           <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -495,7 +516,7 @@
         </div>
 
         <!-- Station Summary Box -->
-        <div class="bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60 rounded-lg p-4 space-y-2.5 text-xs">
+        <div class="bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60 rounded-xl p-4 space-y-2.5 text-xs">
           <div class="flex justify-between items-center pb-2 border-b border-slate-200 dark:border-slate-700/60">
             <span class="text-slate-500 dark:text-slate-400">District:</span>
             <span class="font-bold text-slate-900 dark:text-white">Darrang District, Assam</span>
@@ -535,13 +556,13 @@
         </div>
 
         <!-- Optional different location notice container -->
-        <div id="diff-location-box" class="hidden p-3 rounded-lg bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800 text-xs text-amber-800 dark:text-amber-300">
+        <div id="diff-location-box" class="hidden p-3 rounded-xl bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800 text-xs text-amber-800 dark:text-amber-300">
           Other basin gauge stations (Sonitpur, Nagaon, Bongaigaon) are currently running in secondary ingestion mode. Primary telemetry is locked to Darrang.
         </div>
 
         <!-- Actions -->
         <div class="space-y-2 pt-2">
-          <button onclick="confirmLocationAndEnter()" class="w-full py-3 rounded-lg text-xs font-bold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-xs transition-colors flex items-center justify-center gap-2">
+          <button onclick="confirmLocationAndEnter()" class="w-full py-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 shadow-md shadow-blue-600/20 transition-all flex items-center justify-center gap-2">
             <span>Enter Operational Dashboard</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
@@ -559,7 +580,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-[#111a2e] border-t border-slate-200 dark:border-slate-800 py-4 text-center text-xs text-slate-500 dark:text-slate-400">
+    <footer class="bg-white dark:bg-[#0f1a2e] border-t border-slate-200 dark:border-slate-800 py-4 text-center text-xs text-slate-500 dark:text-slate-400">
       Assam State Disaster Management Information Network • Verified Gauge Station
     </footer>
   </section>
@@ -567,60 +588,75 @@
   <!-- ========================================================================= -->
   <!-- 4. OPERATIONAL PLATFORM SHELL (DASHBOARD & ALL PAGES) -->
   <!-- ========================================================================= -->
-  <section id="view-app" class="app-view min-h-screen flex flex-col hidden bg-slate-50 dark:bg-[#0a101d]">
+  <section id="view-app" class="app-view min-h-screen flex flex-col hidden bg-slate-50 dark:bg-[#080e1b]">
 
-    <!-- APP SHELL TOP HEADER -->
-    <header class="w-full bg-white dark:bg-[#111a2e] border-b border-slate-200 dark:border-slate-800 sticky top-0 z-30 h-16 flex items-center px-4 sm:px-6 justify-between shadow-2xs">
+    <!-- APP SHELL TOP HEADER (REDESIGNED & VIBRANT) -->
+    <header class="w-full glass-header border-b border-slate-200/80 dark:border-slate-800/80 sticky top-0 z-30 h-18 flex items-center px-4 sm:px-6 justify-between shadow-xs">
       
-      <!-- Left: Mobile Toggle & Identity -->
-      <div class="flex items-center gap-3">
+      <!-- Left: Mobile Toggle & Identity & Breadcrumbs -->
+      <div class="flex items-center gap-3.5">
         <!-- Mobile Sidebar Toggle -->
-        <button onclick="toggleMobileSidebar()" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <button onclick="toggleMobileSidebar()" class="md:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/70 dark:border-slate-700/70 shadow-2xs">
           <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
 
         <!-- Brand Identity -->
-        <div class="flex items-center gap-2.5 cursor-pointer" onclick="navigateAppPage('dashboard')">
-          <div class="w-8 h-8 rounded-lg bg-gov-800 text-white flex items-center justify-center font-bold">
-            <i data-lucide="waves" class="w-4 h-4 text-sky-300"></i>
+        <div class="flex items-center gap-3 cursor-pointer group" onclick="navigateAppPage('dashboard')">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-700 via-sky-600 to-indigo-700 text-white flex items-center justify-center font-bold shadow-md shadow-blue-600/20 group-hover:scale-105 transition-transform">
+            <i data-lucide="waves" class="w-5 h-5 text-sky-200"></i>
           </div>
           <div>
-            <div class="text-sm font-bold text-slate-900 dark:text-white leading-tight">Brahmaputra FloodCast</div>
-            <div class="text-[10px] text-slate-500 dark:text-slate-400 font-mono hidden sm:block">Operational Command Console</div>
+            <div class="font-display text-base font-black tracking-tight text-slate-900 dark:text-white leading-tight">
+              Brahmaputra <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500 dark:from-sky-400 dark:to-cyan-300">FloodCast</span>
+            </div>
+            <div class="text-[10px] text-slate-500 dark:text-slate-400 font-mono hidden sm:block">Command Center • Assam Basin</div>
           </div>
         </div>
 
-        <div class="hidden lg:block h-5 w-px bg-slate-200 dark:bg-slate-700 mx-1"></div>
+        <div class="hidden lg:block h-6 w-px bg-slate-200 dark:bg-slate-800 mx-1"></div>
 
-        <!-- Current Breadcrumb Context -->
-        <div class="hidden lg:flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium">
-          <span>Darrang</span>
-          <span>/</span>
-          <span id="breadcrumb-page-name" class="text-slate-900 dark:text-white font-semibold">Operational Dashboard</span>
+        <!-- Current Breadcrumb Context Pill -->
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-700/70 text-xs shadow-2xs">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-blue-500 dark:text-sky-400"></i>
+          <span class="font-medium text-slate-600 dark:text-slate-300">Tangni Reach (Darrang)</span>
+          <span class="text-slate-300 dark:text-slate-600 font-bold">/</span>
+          <span id="breadcrumb-page-name" class="font-bold text-slate-900 dark:text-white">Operational Dashboard</span>
         </div>
+      </div>
+
+      <!-- Center Emergency Status Pill (Large screens) -->
+      <div class="hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/25 text-xs font-bold text-red-600 dark:text-red-400">
+        <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+        <span>Sector Alert: Tangni River Stage 60.31m (+0.31m Above Danger)</span>
       </div>
 
       <!-- Right: Telemetry Sync, Theme, Alerts, User & Refresh -->
       <div class="flex items-center gap-2.5">
         
-        <!-- Live Timestamp Tag -->
-        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-[#17233c] text-xs font-mono text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60">
+        <!-- Live Timestamp Chip -->
+        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100/90 dark:bg-slate-800/80 text-xs font-mono font-semibold text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/80 shadow-2xs">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           <span id="hdr-timestamp">28 Aug 2026, 20:00</span>
         </div>
 
         <!-- Manual Data Refresh Button -->
-        <button id="btn-refresh" onclick="refreshDashboard(true)" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Refresh Live Telemetry">
+        <button id="btn-refresh" onclick="refreshDashboard(true)" class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-sky-400 bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200/80 dark:hover:bg-slate-700 border border-slate-200/70 dark:border-slate-700/70 transition-all shadow-2xs hover:scale-105" title="Refresh Live Telemetry">
           <i data-lucide="refresh-cw" class="w-4 h-4"></i>
         </button>
 
         <!-- Theme Switcher Button -->
-        <button onclick="toggleTheme()" class="theme-toggle-btn p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle theme">
+        <button onclick="toggleTheme()" class="theme-toggle-btn p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200/80 dark:hover:bg-slate-700 border border-slate-200/70 dark:border-slate-700/70 transition-all shadow-2xs hover:scale-105" title="Toggle theme">
           <i data-lucide="moon" class="w-4 h-4"></i>
         </button>
 
+        <!-- Operator User Chip -->
+        <div class="hidden md:flex items-center gap-2 px-2.5 py-1 rounded-xl bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200/70 dark:border-slate-700/70 text-xs">
+          <div class="w-6 h-6 rounded-lg bg-gradient-to-tr from-blue-600 to-sky-500 text-white flex items-center justify-center font-bold text-[10px] shadow-xs">OP</div>
+          <span class="font-bold text-slate-700 dark:text-slate-200">DEOC Darrang</span>
+        </div>
+
         <!-- Exit / Sign Out Button -->
-        <button onclick="promptLogout()" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center gap-1.5" title="Exit Platform">
+        <button onclick="promptLogout()" class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/40 border border-transparent hover:border-red-200 dark:hover:border-red-900/60 transition-all flex items-center gap-1.5" title="Exit Platform">
           <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
           <span class="hidden sm:inline">Exit</span>
         </button>
@@ -631,18 +667,18 @@
     <div class="flex-1 flex overflow-hidden relative">
 
       <!-- Backdrop for Mobile Sidebar -->
-      <div id="sidebar-backdrop" onclick="toggleMobileSidebar(true)" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-30 hidden md:hidden"></div>
+      <div id="sidebar-backdrop" onclick="toggleMobileSidebar(true)" class="fixed inset-0 bg-slate-950/50 backdrop-blur-xs z-30 hidden md:hidden"></div>
 
       <!-- APP SIDEBAR (STICKY ON DESKTOP, DRAWER ON MOBILE) -->
-      <aside id="app-sidebar" class="fixed inset-y-0 left-0 z-40 w-64 bg-white dark:bg-[#111a2e] border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between transform -translate-x-full md:relative md:translate-x-0 transition-transform duration-200 ease-in-out md:z-auto">
+      <aside id="app-sidebar" class="fixed inset-y-0 left-0 z-40 w-64 bg-white dark:bg-[#0f1a2e] border-r border-slate-200/80 dark:border-slate-800/80 flex flex-col justify-between transform -translate-x-full md:relative md:translate-x-0 transition-transform duration-200 ease-in-out md:z-auto">
         
         <!-- Sidebar Navigation List -->
         <div class="p-4 space-y-6 overflow-y-auto flex-1">
           
           <!-- Station Context Strip -->
-          <div class="p-3 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60 space-y-1">
-            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Active Sector</div>
-            <div id="hdr-station" class="text-xs font-bold text-slate-900 dark:text-white truncate">NH15 Crossing Fakirpara Tangni</div>
+          <div class="p-3.5 rounded-xl bg-gradient-to-b from-slate-50 to-blue-50/30 dark:from-[#16243d] dark:to-[#0f1a2e] border border-slate-200 dark:border-slate-700/60 space-y-1">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-sky-400">Active Sector</div>
+            <div id="hdr-station" class="font-display text-xs font-bold text-slate-900 dark:text-white truncate">NH15 Crossing Fakirpara Tangni</div>
             <div id="hdr-district" class="text-[11px] text-slate-500 dark:text-slate-400">Darrang, Assam</div>
           </div>
 
@@ -650,12 +686,12 @@
           <div class="space-y-1">
             <div class="px-2 text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Overview</div>
             
-            <button id="nav-dashboard" onclick="navigateAppPage('dashboard')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
+            <button id="nav-dashboard" onclick="navigateAppPage('dashboard')" class="nav-item w-full flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
               <i data-lucide="layout-dashboard" class="w-4 h-4 shrink-0"></i>
               <span>Dashboard</span>
             </button>
 
-            <button id="nav-map" onclick="navigateAppPage('map')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
+            <button id="nav-map" onclick="navigateAppPage('map')" class="nav-item w-full flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
               <i data-lucide="map" class="w-4 h-4 shrink-0"></i>
               <span>Regional GIS Map</span>
             </button>
@@ -665,20 +701,20 @@
           <div class="space-y-1">
             <div class="px-2 text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Incidents & Forecast</div>
             
-            <button id="nav-alerts" onclick="navigateAppPage('alerts')" class="nav-item w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
+            <button id="nav-alerts" onclick="navigateAppPage('alerts')" class="nav-item w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
               <div class="flex items-center gap-2.5">
                 <i data-lucide="bell" class="w-4 h-4 shrink-0"></i>
                 <span>Active Bulletins</span>
               </div>
-              <span id="sidebar-alert-badge" class="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900">3</span>
+              <span id="sidebar-alert-badge" class="px-2 py-0.2 rounded-full text-[10px] font-bold bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900">3</span>
             </button>
 
-            <button id="nav-history" onclick="navigateAppPage('history')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
+            <button id="nav-history" onclick="navigateAppPage('history')" class="nav-item w-full flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
               <i data-lucide="database" class="w-4 h-4 shrink-0"></i>
               <span>Telemetry Logs</span>
             </button>
 
-            <button id="nav-simulation" onclick="navigateAppPage('simulation')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
+            <button id="nav-simulation" onclick="navigateAppPage('simulation')" class="nav-item w-full flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
               <i data-lucide="sliders" class="w-4 h-4 shrink-0"></i>
               <span>Scenario Simulator</span>
             </button>
@@ -688,17 +724,17 @@
           <div class="space-y-1">
             <div class="px-2 text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">System & Governance</div>
             
-            <button id="nav-how-it-works" onclick="navigateAppPage('how-it-works')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
+            <button id="nav-how-it-works" onclick="navigateAppPage('how-it-works')" class="nav-item w-full flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
               <i data-lucide="cpu" class="w-4 h-4 shrink-0"></i>
               <span>5-Stage Pipeline</span>
             </button>
 
-            <button id="nav-system-details" onclick="navigateAppPage('system-details')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
+            <button id="nav-system-details" onclick="navigateAppPage('system-details')" class="nav-item w-full flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
               <i data-lucide="server" class="w-4 h-4 shrink-0"></i>
               <span>System Diagnostics</span>
             </button>
 
-            <button id="nav-settings" onclick="navigateAppPage('settings')" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
+            <button id="nav-settings" onclick="navigateAppPage('settings')" class="nav-item w-full flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">
               <i data-lucide="settings" class="w-4 h-4 shrink-0"></i>
               <span>Console Settings</span>
             </button>
@@ -706,8 +742,8 @@
 
           <!-- Expandable Submenu Helper -->
           <div class="pt-2">
-            <button onclick="toggleMoreMenu()" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors">
-              <span class="font-medium">More Documentation</span>
+            <button onclick="toggleMoreMenu()" class="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors">
+              <span class="font-semibold">More Documentation</span>
               <i id="more-chevron" data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-200"></i>
             </button>
             <div id="more-submenu" class="hidden pl-6 pr-2 pt-1 space-y-1">
@@ -724,7 +760,7 @@
             <span>Inference Model</span>
             <span class="font-mono font-bold text-slate-900 dark:text-white">RF-v2.4</span>
           </div>
-          <button onclick="promptLogout()" class="w-full py-2 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center justify-center gap-2">
+          <button onclick="promptLogout()" class="w-full py-2.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center justify-center gap-2">
             <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
             <span>Log Out</span>
           </button>
@@ -742,7 +778,7 @@
           <!-- Page Header Strip -->
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
             <div>
-              <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+              <h1 class="font-display text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
                 Hydrological Command Center
               </h1>
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -750,10 +786,10 @@
               </p>
             </div>
             <div class="flex items-center gap-2">
-              <span id="card-updated-time" class="px-2.5 py-1 rounded text-xs font-mono text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <span id="card-updated-time" class="px-3 py-1.5 rounded-xl text-xs font-mono font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
                 Observed: 20:00
               </span>
-              <button onclick="refreshDashboard(true)" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-2xs transition-colors flex items-center gap-1.5">
+              <button onclick="refreshDashboard(true)" class="px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 shadow-2xs transition-all flex items-center gap-1.5">
                 <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
                 <span>Refresh Data</span>
               </button>
@@ -764,13 +800,13 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             
             <!-- KPI 1: Observed Water Level -->
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-3 shadow-2xs">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3 shadow-2xs hover:shadow-xs transition-shadow">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">River Stage</span>
-                <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900">ABOVE DANGER</span>
+                <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">River Stage</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900">ABOVE DANGER</span>
               </div>
               <div class="flex items-baseline gap-1.5">
-                <span id="card-water-level" class="text-3xl font-extrabold font-mono text-slate-900 dark:text-white">60.31</span>
+                <span id="card-water-level" class="font-display text-4xl font-black text-slate-900 dark:text-white">60.31</span>
                 <span class="text-sm font-semibold text-slate-500 dark:text-slate-400">meters MSL</span>
               </div>
               <div class="text-[11px] text-slate-500 dark:text-slate-400 pt-1 border-t border-slate-100 dark:border-slate-800/80 flex justify-between">
@@ -780,13 +816,13 @@
             </div>
 
             <!-- KPI 2: AI Projected Condition (+6h) -->
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-3 shadow-2xs">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3 shadow-2xs hover:shadow-xs transition-shadow">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">6h Prediction</span>
+                <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">6h Prediction</span>
                 <span class="text-[10px] font-mono text-slate-400">Lead: +6 Hours</span>
               </div>
               <div class="flex items-baseline gap-1.5">
-                <span id="card-prediction-label" class="text-xl font-extrabold text-red-600 dark:text-red-400 uppercase truncate">HIGH WATER</span>
+                <span id="card-prediction-label" class="font-display text-2xl font-black text-red-600 dark:text-red-400 uppercase truncate">HIGH WATER</span>
               </div>
               <div class="text-[11px] text-slate-500 dark:text-slate-400 pt-1 border-t border-slate-100 dark:border-slate-800/80 flex justify-between">
                 <span>Baseline: Inundation Likely</span>
@@ -795,18 +831,18 @@
             </div>
 
             <!-- KPI 3: Flood Probability Gauge -->
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-3 shadow-2xs">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3 shadow-2xs hover:shadow-xs transition-shadow">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">High-Water Probability</span>
-                <span class="w-2 h-2 rounded-full bg-red-600"></span>
+                <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">High-Water Probability</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-red-600"></span>
               </div>
               <div class="flex items-center justify-between">
-                <span id="hero-prob-val" class="text-3xl font-extrabold font-mono text-red-600 dark:text-red-400">99%</span>
-                <!-- SVG Mini Circular Meter -->
+                <span id="hero-prob-val" class="font-display text-4xl font-black text-red-600 dark:text-red-400">99%</span>
+                <!-- SVG Circular Meter -->
                 <div class="relative w-12 h-12 flex items-center justify-center">
                   <svg class="w-12 h-12 transform -rotate-90">
                     <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="4" fill="transparent" class="text-slate-200 dark:text-slate-800" />
-                    <circle id="prob-circle" cx="24" cy="24" r="20" stroke="#b91c1c" stroke-width="4" stroke-dasharray="125.66" stroke-dashoffset="1.25" stroke-linecap="round" fill="transparent" />
+                    <circle id="prob-circle" cx="24" cy="24" r="20" stroke="#dc2626" stroke-width="4" stroke-dasharray="125.66" stroke-dashoffset="1.25" stroke-linecap="round" fill="transparent" />
                   </svg>
                   <i data-lucide="alert-triangle" class="w-4 h-4 text-red-600 absolute"></i>
                 </div>
@@ -817,34 +853,34 @@
             </div>
 
             <!-- KPI 4: Risk Tier & Escalation -->
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-3 shadow-2xs">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3 shadow-2xs hover:shadow-xs transition-shadow">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Assigned Risk</span>
-                <span id="action-escalation-pill" class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-400 border border-amber-200 dark:border-amber-900">ESCALATION: STATE</span>
+                <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Assigned Risk</span>
+                <span id="action-escalation-pill" class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-400 border border-amber-200 dark:border-amber-900">ESCALATION: STATE</span>
               </div>
               <div class="flex items-baseline gap-1.5">
-                <span id="hero-risk-level" class="text-2xl font-black text-red-600 dark:text-red-400 tracking-tight">CRITICAL</span>
+                <span id="hero-risk-level" class="font-display text-3xl font-black text-red-600 dark:text-red-400 tracking-tight">CRITICAL</span>
               </div>
               <div class="text-[11px] text-slate-500 dark:text-slate-400 pt-1 border-t border-slate-100 dark:border-slate-800/80">
-                <span id="hero-pred-label">HIGH WATER EXPECTED</span>
+                <span id="hero-pred-label" class="font-bold">HIGH WATER EXPECTED</span>
               </div>
             </div>
 
           </div>
 
           <!-- ACTION PROTOCOL BANNER -->
-          <div class="bg-white dark:bg-[#111a2e] border-l-4 border-l-red-600 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-2xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div class="bg-white dark:bg-[#0f1a2e] border-l-4 border-l-red-600 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div class="space-y-1">
               <div class="flex items-center gap-2">
-                <span class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900">EMERGENCY PROTOCOL</span>
-                <h3 id="card-action-title" class="text-sm font-bold text-slate-900 dark:text-white uppercase">STATE-LEVEL ADVISORY & RESPONSE ACTIVATED</h3>
+                <span class="text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900">EMERGENCY PROTOCOL</span>
+                <h3 id="card-action-title" class="font-display text-sm font-bold text-slate-900 dark:text-white uppercase">STATE-LEVEL ADVISORY & RESPONSE ACTIVATED</h3>
               </div>
               <p id="card-action-desc" class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 Deploy rapid assessment teams. Immediate embankment patrol along Tangni river reach. Coordinate with DEOC Darrang for low-lying sector evacuations.
               </p>
             </div>
             <div class="flex items-center gap-2 shrink-0">
-              <button onclick="openAlertDetailModal('ALT-2026-0828-99')" class="px-4 py-2 rounded-lg text-xs font-semibold text-white bg-red-700 hover:bg-red-800 shadow-2xs transition-colors">
+              <button onclick="openAlertDetailModal('ALT-2026-0828-99')" class="px-4 py-2 rounded-xl text-xs font-bold text-white bg-red-600 hover:bg-red-700 shadow-2xs transition-colors">
                 Inspect Incident Bulletin
               </button>
             </div>
@@ -854,37 +890,37 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             
             <!-- Visual 1: Station GIS Map -->
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-4 shadow-2xs">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-4 shadow-2xs">
               <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
                 <div class="flex items-center gap-2">
-                  <i data-lucide="map-pin" class="w-4 h-4 text-gov-700 dark:text-sky-400"></i>
-                  <h3 class="text-sm font-bold text-slate-900 dark:text-white">Active Gauge Cross-Section</h3>
+                  <i data-lucide="map-pin" class="w-4 h-4 text-blue-600 dark:text-sky-400"></i>
+                  <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white">Active Gauge Cross-Section</h3>
                 </div>
                 <div class="text-[11px] font-mono text-slate-500 dark:text-slate-400">26.5083°N, 92.1164°E</div>
               </div>
 
               <!-- Leaflet Map Container -->
-              <div id="stationMap" class="w-full h-80 rounded-lg border border-slate-200 dark:border-slate-800 overflow-hidden relative z-0"></div>
+              <div id="stationMap" class="w-full h-80 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden relative z-0"></div>
 
               <div class="flex flex-wrap items-center justify-between text-xs text-slate-500 dark:text-slate-400 pt-1">
                 <span>Station: NH15 Fakirpara Tangni</span>
-                <button onclick="navigateAppPage('map')" class="font-semibold text-gov-700 dark:text-sky-400 hover:underline">Open Regional View →</button>
+                <button onclick="navigateAppPage('map')" class="font-bold text-blue-600 dark:text-sky-400 hover:underline">Open Regional View →</button>
               </div>
             </div>
 
             <!-- Visual 2: 24-Hour Hydrometric Trend Chart -->
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-4 shadow-2xs">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-4 shadow-2xs">
               <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
                 <div class="flex items-center gap-2">
-                  <i data-lucide="trending-up" class="w-4 h-4 text-gov-700 dark:text-sky-400"></i>
-                  <h3 class="text-sm font-bold text-slate-900 dark:text-white">Hydrograph & Stage Trajectory</h3>
+                  <i data-lucide="trending-up" class="w-4 h-4 text-blue-600 dark:text-sky-400"></i>
+                  <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white">Hydrograph & Stage Trajectory</h3>
                 </div>
                 
                 <!-- Range Controls (6h, 12h, 24h) -->
-                <div class="flex items-center gap-1 bg-slate-100 dark:bg-[#17233c] p-0.5 rounded-lg border border-slate-200 dark:border-slate-700/60 text-xs">
-                  <button id="btn-range-6" onclick="setTrendRange(6)" class="px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">6h</button>
-                  <button id="btn-range-12" onclick="setTrendRange(12)" class="px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">12h</button>
-                  <button id="btn-range-24" onclick="setTrendRange(24)" class="px-2.5 py-1 rounded-md bg-gov-800 text-white font-bold dark:bg-sky-600 shadow-2xs">24h</button>
+                <div class="flex items-center gap-1 bg-slate-100 dark:bg-[#16243d] p-1 rounded-xl border border-slate-200 dark:border-slate-700/60 text-xs">
+                  <button id="btn-range-6" onclick="setTrendRange(6)" class="px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">6h</button>
+                  <button id="btn-range-12" onclick="setTrendRange(12)" class="px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">12h</button>
+                  <button id="btn-range-24" onclick="setTrendRange(24)" class="px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold dark:bg-sky-600 shadow-2xs">24h</button>
                 </div>
               </div>
 
@@ -895,7 +931,7 @@
 
               <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 pt-1">
                 <div class="flex items-center gap-3">
-                  <span class="flex items-center gap-1.5"><span class="w-2.5 h-0.5 bg-gov-700 dark:bg-sky-400"></span> Water Level (m)</span>
+                  <span class="flex items-center gap-1.5"><span class="w-2.5 h-0.5 bg-blue-600 dark:bg-sky-400"></span> Water Level (m)</span>
                   <span class="flex items-center gap-1.5"><span class="w-2.5 h-0.5 bg-red-600"></span> Danger Threshold (60.00m)</span>
                 </div>
                 <span id="trend-latest-pill" class="font-mono font-bold text-slate-900 dark:text-white">● 60.31 m</span>
@@ -907,25 +943,25 @@
           <!-- SECONDARY INFORMATION & TELEMETRY STREAM SPECIFICATIONS -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-2">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-2">
               <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Telemetry Feed Origin</div>
-              <div id="src-title" class="text-sm font-bold text-slate-900 dark:text-white">GLOFAS HYDROLOGY BRIDGE</div>
+              <div id="src-title" class="font-display text-sm font-bold text-slate-900 dark:text-white">GLOFAS HYDROLOGY BRIDGE</div>
               <p id="src-subtitle" class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                 Derived Hydrology & Catchment Streamflow synchronized with local gauge telemetry cross-validation.
               </p>
             </div>
 
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-2">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-2">
               <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Basin Inundation Risk</div>
-              <div class="text-sm font-bold text-slate-900 dark:text-white">LOW-LYING EMBANKMENT SECTORS</div>
+              <div class="font-display text-sm font-bold text-slate-900 dark:text-white">LOW-LYING EMBANKMENT SECTORS</div>
               <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                 Tangni river embankment sections between Ch 12.00 km and Ch 16.50 km subject to pressure seepage and erosion.
               </p>
             </div>
 
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-2">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-2">
               <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Emergency Actions & Standby</div>
-              <div class="text-sm font-bold text-slate-900 dark:text-white">DEOC INCIDENT DISPATCH</div>
+              <div class="font-display text-sm font-bold text-slate-900 dark:text-white">DEOC INCIDENT DISPATCH</div>
               <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                 SDRF river rescue boats positioned at Mangaldai sub-depot. Relief shelter camp registry initialized.
               </p>
@@ -941,7 +977,7 @@
         <div id="page-map" class="app-page space-y-6 hidden">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
             <div>
-              <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+              <h1 class="font-display text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
                 Regional Hydrological GIS Surveillance
               </h1>
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -949,20 +985,20 @@
               </p>
             </div>
             <div class="flex items-center gap-2">
-              <span class="text-xs font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700">
+              <span class="text-xs font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700">
                 4 Active Gauge Sectors
               </span>
             </div>
           </div>
 
           <!-- Full Regional Map Container -->
-          <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-4 shadow-2xs">
-            <div id="fullRegionalMap" class="w-full h-[520px] rounded-lg border border-slate-200 dark:border-slate-800 overflow-hidden relative z-0"></div>
+          <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-4 shadow-2xs">
+            <div id="fullRegionalMap" class="w-full h-[520px] rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden relative z-0"></div>
 
             <!-- Map Legend Strip -->
             <div class="flex flex-wrap items-center justify-between gap-4 pt-2 text-xs border-t border-slate-100 dark:border-slate-800">
               <div class="flex items-center gap-4">
-                <span class="text-slate-500 dark:text-slate-400 font-semibold uppercase text-[10px]">Severity Legend:</span>
+                <span class="text-slate-500 dark:text-slate-400 font-bold uppercase text-[10px]">Severity Legend:</span>
                 <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-600"></span> Normal (&lt;55.0m)</span>
                 <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-amber-600"></span> Advisory (55.0–58.0m)</span>
                 <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-orange-600"></span> Warning (58.0–60.0m)</span>
@@ -976,27 +1012,27 @@
 
           <!-- District Telemetry Grid -->
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="bg-white dark:bg-[#111a2e] border-l-4 border-l-red-600 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-1">
+            <div class="bg-white dark:bg-[#0f1a2e] border-l-4 border-l-red-600 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 space-y-1">
               <div class="text-[10px] font-bold text-red-600 uppercase">Darrang District</div>
-              <div class="text-sm font-bold text-slate-900 dark:text-white">60.31 m (Critical)</div>
+              <div class="font-display text-sm font-bold text-slate-900 dark:text-white">60.31 m (Critical)</div>
               <div class="text-xs text-slate-500">NH15 Crossing Fakirpara Tangni</div>
             </div>
 
-            <div class="bg-white dark:bg-[#111a2e] border-l-4 border-l-amber-600 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-1">
+            <div class="bg-white dark:bg-[#0f1a2e] border-l-4 border-l-amber-600 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 space-y-1">
               <div class="text-[10px] font-bold text-amber-600 uppercase">Sonitpur District</div>
-              <div class="text-sm font-bold text-slate-900 dark:text-white">57.20 m (Moderate)</div>
+              <div class="font-display text-sm font-bold text-slate-900 dark:text-white">57.20 m (Moderate)</div>
               <div class="text-xs text-slate-500">Tezpur River Reach</div>
             </div>
 
-            <div class="bg-white dark:bg-[#111a2e] border-l-4 border-l-emerald-600 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-1">
+            <div class="bg-white dark:bg-[#0f1a2e] border-l-4 border-l-emerald-600 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 space-y-1">
               <div class="text-[10px] font-bold text-emerald-600 uppercase">Nagaon District</div>
-              <div class="text-sm font-bold text-slate-900 dark:text-white">53.40 m (Normal)</div>
+              <div class="font-display text-sm font-bold text-slate-900 dark:text-white">53.40 m (Normal)</div>
               <div class="text-xs text-slate-500">Kolong River Confluence</div>
             </div>
 
-            <div class="bg-white dark:bg-[#111a2e] border-l-4 border-l-emerald-600 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-1">
+            <div class="bg-white dark:bg-[#0f1a2e] border-l-4 border-l-emerald-600 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 space-y-1">
               <div class="text-[10px] font-bold text-emerald-600 uppercase">Bongaigaon District</div>
-              <div class="text-sm font-bold text-slate-900 dark:text-white">51.80 m (Normal)</div>
+              <div class="font-display text-sm font-bold text-slate-900 dark:text-white">51.80 m (Normal)</div>
               <div class="text-xs text-slate-500">Aie River Bridge</div>
             </div>
           </div>
@@ -1008,7 +1044,7 @@
         <div id="page-alerts" class="app-page space-y-6 hidden">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
             <div>
-              <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+              <h1 class="font-display text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
                 Emergency Bulletins & Flood Warnings
               </h1>
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -1016,7 +1052,7 @@
               </p>
             </div>
             <div>
-              <span id="alerts-count-badge" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900">
+              <span id="alerts-count-badge" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900">
                 3 ACTIVE ALERTS
               </span>
             </div>
@@ -1026,17 +1062,17 @@
           <div class="space-y-4">
             
             <!-- Alert 1: Critical -->
-            <div class="bg-white dark:bg-[#111a2e] border-l-4 border-l-red-600 border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-4 shadow-2xs">
+            <div class="bg-white dark:bg-[#0f1a2e] border-l-4 border-l-red-600 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xs">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div class="flex items-center gap-2.5">
-                  <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900">CRITICAL PRIORITY</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900">CRITICAL PRIORITY</span>
                   <span class="text-xs font-mono text-slate-500 dark:text-slate-400">REF: ALT-2026-0828-99</span>
                 </div>
                 <div class="text-xs text-slate-500 font-mono">Issued: 28 Aug 2026, 20:00 IST</div>
               </div>
 
               <div>
-                <h3 class="text-base font-bold text-slate-900 dark:text-white">
+                <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">
                   Tangni River Danger Mark Exceeded at NH15 Crossing Fakirpara
                 </h3>
                 <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
@@ -1049,24 +1085,24 @@
                   <span>Escalation Authority: <strong class="text-slate-700 dark:text-slate-300">ASDMA / DEOC Darrang</strong></span>
                   <span>Probability: <strong class="text-red-600">99%</strong></span>
                 </div>
-                <button onclick="openAlertDetailModal('ALT-2026-0828-99')" class="px-4 py-2 rounded-lg text-xs font-semibold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 transition-colors">
+                <button onclick="openAlertDetailModal('ALT-2026-0828-99')" class="px-4 py-2 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 dark:bg-sky-600 dark:hover:bg-sky-500 transition-colors">
                   Inspect Bulletin & Directives
                 </button>
               </div>
             </div>
 
             <!-- Alert 2: High Warning -->
-            <div class="bg-white dark:bg-[#111a2e] border-l-4 border-l-orange-500 border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-4 shadow-2xs">
+            <div class="bg-white dark:bg-[#0f1a2e] border-l-4 border-l-orange-500 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xs">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div class="flex items-center gap-2.5">
-                  <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-400 border border-orange-200 dark:border-orange-900">HIGH WARNING</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-400 border border-orange-200 dark:border-orange-900">HIGH WARNING</span>
                   <span class="text-xs font-mono text-slate-500 dark:text-slate-400">REF: ALT-2026-0828-94</span>
                 </div>
                 <div class="text-xs text-slate-500 font-mono">Issued: 28 Aug 2026, 17:00 IST</div>
               </div>
 
               <div>
-                <h3 class="text-base font-bold text-slate-900 dark:text-white">
+                <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">
                   Rapid Catchment Inflow & Water Stage Rise Recorded
                 </h3>
                 <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
@@ -1079,24 +1115,24 @@
                   <span>Escalation Authority: <strong class="text-slate-700 dark:text-slate-300">DDMA Darrang</strong></span>
                   <span>Probability: <strong class="text-orange-600">98%</strong></span>
                 </div>
-                <button onclick="openAlertDetailModal('ALT-2026-0828-94')" class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                <button onclick="openAlertDetailModal('ALT-2026-0828-94')" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                   Inspect Bulletin
                 </button>
               </div>
             </div>
 
             <!-- Alert 3: Watch Advisory -->
-            <div class="bg-white dark:bg-[#111a2e] border-l-4 border-l-amber-500 border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-4 shadow-2xs">
+            <div class="bg-white dark:bg-[#0f1a2e] border-l-4 border-l-amber-500 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xs">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div class="flex items-center gap-2.5">
-                  <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">ADVISORY WATCH</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-900">ADVISORY WATCH</span>
                   <span class="text-xs font-mono text-slate-500 dark:text-slate-400">REF: ALT-2026-0828-88</span>
                 </div>
                 <div class="text-xs text-slate-500 font-mono">Issued: 28 Aug 2026, 12:00 IST</div>
               </div>
 
               <div>
-                <h3 class="text-base font-bold text-slate-900 dark:text-white">
+                <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">
                   Monsoonal Surge Ingress — Upstream Catchment Precipitation
                 </h3>
                 <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
@@ -1109,7 +1145,7 @@
                   <span>Escalation Authority: <strong class="text-slate-700 dark:text-slate-300">Circle Officer Watch</strong></span>
                   <span>Probability: <strong class="text-amber-600">85%</strong></span>
                 </div>
-                <button onclick="openAlertDetailModal('ALT-2026-0828-88')" class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                <button onclick="openAlertDetailModal('ALT-2026-0828-88')" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                   Inspect Bulletin
                 </button>
               </div>
@@ -1124,7 +1160,7 @@
         <div id="page-history" class="app-page space-y-6 hidden">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
             <div>
-              <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+              <h1 class="font-display text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
                 Hydrometric Telemetry & Prediction Logs
               </h1>
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -1132,7 +1168,7 @@
               </p>
             </div>
             <div class="flex items-center gap-2">
-              <button onclick="exportHistoryCSV()" class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-[#17233c] border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-2xs flex items-center gap-1.5">
+              <button onclick="exportHistoryCSV()" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 bg-white dark:bg-[#16243d] border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-2xs flex items-center gap-1.5">
                 <i data-lucide="download" class="w-3.5 h-3.5"></i>
                 <span>Export CSV Dataset</span>
               </button>
@@ -1140,11 +1176,11 @@
           </div>
 
           <!-- Filter Control Bar -->
-          <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-4 shadow-2xs">
+          <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-2xs">
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Risk Severity Filter</label>
-                <select id="hist-filter-risk" onchange="filterHistoryTable()" class="w-full bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-900 dark:text-white font-medium focus:ring-1 focus:ring-blue-600">
+                <label class="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Risk Severity Filter</label>
+                <select id="hist-filter-risk" onchange="filterHistoryTable()" class="w-full bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white font-medium focus:ring-1 focus:ring-blue-600">
                   <option value="all">All Risk Levels</option>
                   <option value="CRITICAL">Critical Severity</option>
                   <option value="HIGH">High Severity</option>
@@ -1154,8 +1190,8 @@
               </div>
 
               <div>
-                <label class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Prediction Output Filter</label>
-                <select id="hist-filter-pred" onchange="filterHistoryTable()" class="w-full bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-900 dark:text-white font-medium focus:ring-1 focus:ring-blue-600">
+                <label class="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Prediction Output Filter</label>
+                <select id="hist-filter-pred" onchange="filterHistoryTable()" class="w-full bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white font-medium focus:ring-1 focus:ring-blue-600">
                   <option value="all">All Conditions</option>
                   <option value="HIGH WATER">HIGH WATER Projected</option>
                   <option value="NORMAL">NORMAL Projected</option>
@@ -1163,8 +1199,8 @@
               </div>
 
               <div>
-                <label class="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Telemetry Origin Filter</label>
-                <select id="hist-filter-source" onchange="filterHistoryTable()" class="w-full bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-900 dark:text-white font-medium focus:ring-1 focus:ring-blue-600">
+                <label class="block text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Telemetry Origin Filter</label>
+                <select id="hist-filter-source" onchange="filterHistoryTable()" class="w-full bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white font-medium focus:ring-1 focus:ring-blue-600">
                   <option value="all">All Telemetry Origins</option>
                   <option value="HYDROLOGY_BRIDGE">Hydrology Bridge (GLOFAS)</option>
                   <option value="NWDP">NWDP Ground Sensor</option>
@@ -1174,19 +1210,19 @@
           </div>
 
           <!-- Professional Data Table -->
-          <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-2xs">
+          <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-2xs">
             <div class="overflow-x-auto">
               <table class="w-full text-left text-xs">
-                <thead class="bg-slate-50 dark:bg-[#17233c] border-b border-slate-200 dark:border-slate-800 text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                <thead class="bg-slate-50 dark:bg-[#16243d] border-b border-slate-200 dark:border-slate-800 text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                   <tr>
-                    <th class="py-3 px-4">Timestamp (IST)</th>
-                    <th class="py-3 px-4">Stage (m MSL)</th>
-                    <th class="py-3 px-4">Prediction (+6h)</th>
-                    <th class="py-3 px-4">Confidence</th>
-                    <th class="py-3 px-4">Risk Category</th>
-                    <th class="py-3 px-4">Escalation</th>
-                    <th class="py-3 px-4">Telemetry Origin</th>
-                    <th class="py-3 px-4">State</th>
+                    <th class="py-3.5 px-4">Timestamp (IST)</th>
+                    <th class="py-3.5 px-4">Stage (m MSL)</th>
+                    <th class="py-3.5 px-4">Prediction (+6h)</th>
+                    <th class="py-3.5 px-4">Confidence</th>
+                    <th class="py-3.5 px-4">Risk Category</th>
+                    <th class="py-3.5 px-4">Escalation</th>
+                    <th class="py-3.5 px-4">Telemetry Origin</th>
+                    <th class="py-3.5 px-4">State</th>
                   </tr>
                 </thead>
                 <tbody id="tbl-full-history-body" class="divide-y divide-slate-100 dark:divide-slate-800">
@@ -1203,7 +1239,7 @@
         <div id="page-simulation" class="app-page space-y-6 hidden">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
             <div>
-              <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+              <h1 class="font-display text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
                 Hydrological Scenario Sandbox
               </h1>
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -1211,7 +1247,7 @@
               </p>
             </div>
             <div class="flex items-center gap-2">
-              <button onclick="resetSimSlider()" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors">
+              <button onclick="resetSimSlider()" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors">
                 Reset Baseline
               </button>
             </div>
@@ -1220,13 +1256,13 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             
             <!-- Simulation Controls Card -->
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-6 shadow-2xs">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-6 shadow-2xs">
               <div class="space-y-2">
                 <div class="flex justify-between items-baseline">
                   <label class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Synthetic River Stage (m)</label>
-                  <span id="page-sim-level-display" class="font-mono text-2xl font-black text-gov-800 dark:text-sky-400">59.80 m</span>
+                  <span id="page-sim-level-display" class="font-display text-3xl font-black text-blue-600 dark:text-sky-400">59.80 m</span>
                 </div>
-                <input id="page-sim-level-slider" type="range" min="50.0" max="65.0" step="0.05" value="59.8" oninput="updatePageSimSlider(this.value)" class="w-full accent-gov-800 dark:accent-sky-500 cursor-pointer h-2 bg-slate-200 dark:bg-slate-700 rounded-lg">
+                <input id="page-sim-level-slider" type="range" min="50.0" max="65.0" step="0.05" value="59.8" oninput="updatePageSimSlider(this.value)" class="w-full accent-blue-600 dark:accent-sky-500 cursor-pointer h-2.5 bg-slate-200 dark:bg-slate-700 rounded-lg">
                 <div class="flex justify-between text-[11px] font-mono text-slate-400 pt-1">
                   <span>50.00 m (Dry Season)</span>
                   <span>60.00 m (Danger Mark)</span>
@@ -1237,62 +1273,62 @@
               <!-- Preset Scenario Buttons -->
               <div class="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
                 <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Standard Test Scenarios:</div>
-                <div class="grid grid-cols-2 gap-2">
-                  <button onclick="setSimPreset(52.5)" class="p-2.5 rounded-lg bg-slate-50 dark:bg-[#17233c] hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-left transition-colors">
-                    <div class="font-bold text-slate-900 dark:text-white text-xs">Dry Baseflow</div>
+                <div class="grid grid-cols-2 gap-2.5">
+                  <button onclick="setSimPreset(52.5)" class="p-3 rounded-xl bg-slate-50 dark:bg-[#16243d] hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-left transition-colors">
+                    <div class="font-display font-bold text-slate-900 dark:text-white text-xs">Dry Baseflow</div>
                     <div class="text-[11px] text-slate-500">52.50 m (Normal)</div>
                   </button>
-                  <button onclick="setSimPreset(57.0)" class="p-2.5 rounded-lg bg-slate-50 dark:bg-[#17233c] hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-left transition-colors">
-                    <div class="font-bold text-slate-900 dark:text-white text-xs">Monsoonal Rise</div>
+                  <button onclick="setSimPreset(57.0)" class="p-3 rounded-xl bg-slate-50 dark:bg-[#16243d] hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-left transition-colors">
+                    <div class="font-display font-bold text-slate-900 dark:text-white text-xs">Monsoonal Rise</div>
                     <div class="text-[11px] text-slate-500">57.00 m (Advisory)</div>
                   </button>
-                  <button onclick="setSimPreset(59.8)" class="p-2.5 rounded-lg bg-slate-50 dark:bg-[#17233c] hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-left transition-colors">
-                    <div class="font-bold text-slate-900 dark:text-white text-xs">Warning Threshold</div>
+                  <button onclick="setSimPreset(59.8)" class="p-3 rounded-xl bg-slate-50 dark:bg-[#16243d] hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-left transition-colors">
+                    <div class="font-display font-bold text-slate-900 dark:text-white text-xs">Warning Threshold</div>
                     <div class="text-[11px] text-slate-500">59.80 m (Sub-Critical)</div>
                   </button>
-                  <button onclick="setSimPreset(61.5)" class="p-2.5 rounded-lg bg-slate-50 dark:bg-[#17233c] hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-left transition-colors">
-                    <div class="font-bold text-slate-900 dark:text-white text-xs">Overtopping Surge</div>
+                  <button onclick="setSimPreset(61.5)" class="p-3 rounded-xl bg-slate-50 dark:bg-[#16243d] hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-left transition-colors">
+                    <div class="font-display font-bold text-slate-900 dark:text-white text-xs">Overtopping Surge</div>
                     <div class="text-[11px] text-slate-500">61.50 m (Critical Overtopping)</div>
                   </button>
                 </div>
               </div>
 
-              <button id="btn-page-run-sim" onclick="executePageSimulation()" class="w-full py-3 rounded-lg text-xs font-bold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-2xs transition-colors flex items-center justify-center gap-2">
+              <button id="btn-page-run-sim" onclick="executePageSimulation()" class="w-full py-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 shadow-md shadow-blue-600/20 transition-all flex items-center justify-center gap-2">
                 <i data-lucide="play" class="w-4 h-4"></i>
                 <span>Run AI Inference Simulation</span>
               </button>
             </div>
 
             <!-- Simulation Inference Output Card -->
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-6 shadow-2xs">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-6 shadow-2xs">
               <div class="border-b border-slate-100 dark:border-slate-800 pb-3">
-                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Simulated Inference Assessment</h3>
+                <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white">Simulated Inference Assessment</h3>
                 <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Model output evaluated against Darrang station parameters</p>
               </div>
 
               <div class="grid grid-cols-2 gap-4">
-                <div class="p-4 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60 space-y-1">
+                <div class="p-4 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60 space-y-1">
                   <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Predicted Condition</div>
-                  <div id="page-sim-pred-label" class="text-base font-extrabold text-slate-900 dark:text-white">HIGH WATER</div>
+                  <div id="page-sim-pred-label" class="font-display text-lg font-black text-slate-900 dark:text-white">HIGH WATER</div>
                 </div>
 
-                <div class="p-4 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60 space-y-1">
+                <div class="p-4 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60 space-y-1">
                   <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Inference Probability</div>
-                  <div id="page-sim-prob" class="text-base font-mono font-extrabold text-red-600 dark:text-red-400">92%</div>
+                  <div id="page-sim-prob" class="font-display text-xl font-black text-red-600 dark:text-red-400">92%</div>
                 </div>
 
-                <div class="p-4 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60 space-y-1">
+                <div class="p-4 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60 space-y-1">
                   <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Risk Severity</div>
-                  <div id="page-sim-risk" class="text-base font-bold text-amber-600 dark:text-amber-400">HIGH</div>
+                  <div id="page-sim-risk" class="font-display text-lg font-bold text-amber-600 dark:text-amber-400">HIGH</div>
                 </div>
 
-                <div class="p-4 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60 space-y-1">
+                <div class="p-4 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60 space-y-1">
                   <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Required Escalation</div>
-                  <div id="page-sim-escalation" class="text-base font-bold text-slate-900 dark:text-white">DISTRICT</div>
+                  <div id="page-sim-escalation" class="font-display text-lg font-bold text-slate-900 dark:text-white">DISTRICT</div>
                 </div>
               </div>
 
-              <div class="p-4 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 <strong>Model Note:</strong> This simulation invokes the live FastAPI backend endpoint <code class="font-mono text-[11px] bg-slate-200 dark:bg-slate-800 px-1 py-0.5 rounded">/api/flood/predict-custom</code>. The result is calculated through the Random Forest classifier without polluting the persistent observation log.
               </div>
             </div>
@@ -1305,7 +1341,7 @@
         <!-- =================================================================== -->
         <div id="page-how-it-works" class="app-page space-y-6 hidden">
           <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
-            <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+            <h1 class="font-display text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
               Five-Stage Early Warning Architecture
             </h1>
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -1314,41 +1350,41 @@
           </div>
 
           <div class="space-y-4">
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-3 shadow-2xs">
-              <div class="flex items-center gap-2 font-mono text-xs font-bold text-gov-700 dark:text-sky-400">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-3 shadow-2xs">
+              <div class="flex items-center gap-2 font-mono text-xs font-bold text-blue-600 dark:text-sky-400">
                 <span>01</span> • IN SITU TELEMETRY
               </div>
-              <h3 class="text-base font-bold text-slate-900 dark:text-white">Ground Sensor & Satellite Stream Integration</h3>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Ground Sensor & Satellite Stream Integration</h3>
               <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 Hydro-acoustic and pressure-transducer river sensors installed at NH15 Fakirpara record instantaneous gauge heights every 60 minutes. Sourced concurrently through national hydrometric databases (NWDP) and global catchment models (GLOFAS).
               </p>
             </div>
 
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-3 shadow-2xs">
-              <div class="flex items-center gap-2 font-mono text-xs font-bold text-gov-700 dark:text-sky-400">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-3 shadow-2xs">
+              <div class="flex items-center gap-2 font-mono text-xs font-bold text-blue-600 dark:text-sky-400">
                 <span>02</span> • FEATURE ENGINEERING & NORMALIZATION
               </div>
-              <h3 class="text-base font-bold text-slate-900 dark:text-white">Hydrological State Vector Generation</h3>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Hydrological State Vector Generation</h3>
               <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 Raw sensor measurements are enriched with temporal derivative features: 3-hour delta, 6-hour rolling mean, rate of stage acceleration, and seasonal baseline variances. Features are standardized to prevent distribution drift during peak monsoon cycles.
               </p>
             </div>
 
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-3 shadow-2xs">
-              <div class="flex items-center gap-2 font-mono text-xs font-bold text-gov-700 dark:text-sky-400">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-3 shadow-2xs">
+              <div class="flex items-center gap-2 font-mono text-xs font-bold text-blue-600 dark:text-sky-400">
                 <span>03</span> • MACHINE LEARNING INFERENCE
               </div>
-              <h3 class="text-base font-bold text-slate-900 dark:text-white">6-Hour High-Water Probability Modeling</h3>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">6-Hour High-Water Probability Modeling</h3>
               <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 A supervised ensemble classifier evaluates the state vector to produce a calibrated likelihood of the river breaching the 60.00m danger threshold 6 hours into the future. Test verification demonstrates 94.2% accuracy on historic Assam flood seasons.
               </p>
             </div>
 
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-3 shadow-2xs">
-              <div class="flex items-center gap-2 font-mono text-xs font-bold text-gov-700 dark:text-sky-400">
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-3 shadow-2xs">
+              <div class="flex items-center gap-2 font-mono text-xs font-bold text-blue-600 dark:text-sky-400">
                 <span>04</span> • MULTI-TIER ESCALATION MAPPING
               </div>
-              <h3 class="text-base font-bold text-slate-900 dark:text-white">Disaster Authority Routing</h3>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Disaster Authority Routing</h3>
               <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 Inference outcomes directly dictate the operational posture: NORMAL (baseline observation), ADVISORY (Circle Officer inspection), WARNING (DDMA deployment), or CRITICAL (ASDMA state command center activation).
               </p>
@@ -1361,7 +1397,7 @@
         <!-- =================================================================== -->
         <div id="page-system-details" class="app-page space-y-6 hidden">
           <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
-            <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+            <h1 class="font-display text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
               System Specifications & Diagnostics
             </h1>
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -1371,8 +1407,8 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-4 shadow-2xs">
-              <h3 class="text-sm font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-2">Runtime Infrastructure</h3>
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xs">
+              <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-2">Runtime Infrastructure</h3>
               
               <div class="space-y-3 text-xs">
                 <div class="flex justify-between items-center">
@@ -1398,8 +1434,8 @@
               </div>
             </div>
 
-            <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-4 shadow-2xs">
-              <h3 class="text-sm font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-2">Station Calibration Parameters</h3>
+            <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xs">
+              <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-2">Station Calibration Parameters</h3>
               
               <div class="space-y-3 text-xs">
                 <div class="flex justify-between items-center">
@@ -1433,7 +1469,7 @@
         <!-- =================================================================== -->
         <div id="page-settings" class="app-page space-y-6 hidden">
           <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
-            <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+            <h1 class="font-display text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
               Console Preferences & Notification Rules
             </h1>
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -1441,49 +1477,49 @@
             </p>
           </div>
 
-          <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl p-6 space-y-6 shadow-2xs max-w-2xl">
+          <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-6 shadow-2xs max-w-2xl">
             
             <div class="space-y-4">
-              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Display & Theme</h3>
+              <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white">Display & Theme</h3>
               
-              <div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60">
+              <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60">
                 <div>
-                  <div class="text-xs font-semibold text-slate-900 dark:text-white">Platform Color Theme</div>
+                  <div class="text-xs font-bold text-slate-900 dark:text-white">Platform Color Theme</div>
                   <div class="text-[11px] text-slate-500">Choose between light administrative and dark control room mode</div>
                 </div>
-                <button onclick="toggleTheme()" class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors shadow-2xs">
+                <button onclick="toggleTheme()" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors shadow-2xs">
                   Toggle Light / Dark
                 </button>
               </div>
             </div>
 
             <div class="space-y-4 pt-4 border-t border-slate-100 dark:border-slate-800">
-              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Telemetry Sync Frequency</h3>
+              <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white">Telemetry Sync Frequency</h3>
               
               <div class="grid grid-cols-3 gap-3 text-xs">
-                <button class="p-3 rounded-lg border border-slate-200 dark:border-slate-700 text-center hover:border-blue-600 transition-colors">
-                  <div class="font-bold text-slate-900 dark:text-white">30s</div>
+                <button class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 text-center hover:border-blue-600 transition-colors">
+                  <div class="font-display font-bold text-slate-900 dark:text-white">30s</div>
                   <div class="text-[11px] text-slate-500">High Frequency</div>
                 </button>
-                <button class="p-3 rounded-lg border-2 border-gov-800 dark:border-sky-500 bg-blue-50/50 dark:bg-sky-950/40 text-center font-bold text-gov-800 dark:text-sky-300">
-                  <div class="font-bold">60s</div>
+                <button class="p-3 rounded-xl border-2 border-blue-600 dark:border-sky-500 bg-blue-50/50 dark:bg-sky-950/40 text-center font-bold text-blue-700 dark:text-sky-300">
+                  <div class="font-display font-bold">60s</div>
                   <div class="text-[11px] text-slate-500">Standard (Recommended)</div>
                 </button>
-                <button class="p-3 rounded-lg border border-slate-200 dark:border-slate-700 text-center hover:border-blue-600 transition-colors">
-                  <div class="font-bold text-slate-900 dark:text-white">5m</div>
+                <button class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 text-center hover:border-blue-600 transition-colors">
+                  <div class="font-display font-bold text-slate-900 dark:text-white">5m</div>
                   <div class="text-[11px] text-slate-500">Bandwidth Saver</div>
                 </button>
               </div>
             </div>
 
             <div class="space-y-4 pt-4 border-t border-slate-100 dark:border-slate-800">
-              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Active Station Sector</h3>
-              <div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60 text-xs">
+              <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white">Active Station Sector</h3>
+              <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60 text-xs">
                 <div>
-                  <span class="font-bold text-slate-900 dark:text-white">NH15 Crossing Fakirpara Tangni</span>
+                  <span class="font-display font-bold text-slate-900 dark:text-white">NH15 Crossing Fakirpara Tangni</span>
                   <div class="text-slate-500">Darrang District, Assam</div>
                 </div>
-                <button onclick="navigateTo('location-gate')" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                <button onclick="navigateTo('location-gate')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                   Change Station
                 </button>
               </div>
@@ -1500,13 +1536,13 @@
   <!-- MODAL: ABOUT THE PLATFORM -->
   <!-- ========================================================================= -->
   <div id="modal-about" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl max-w-lg w-full p-6 shadow-xl space-y-4 text-slate-800 dark:text-slate-200">
+    <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-xl space-y-4 text-slate-800 dark:text-slate-200">
       <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
         <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-lg bg-gov-800 text-white flex items-center justify-center font-bold text-xs">
-            <i data-lucide="info" class="w-4 h-4 text-sky-300"></i>
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-sky-600 text-white flex items-center justify-center font-bold text-xs">
+            <i data-lucide="info" class="w-4 h-4 text-sky-200"></i>
           </div>
-          <h3 class="text-sm font-bold text-slate-900 dark:text-white">About Brahmaputra FloodCast</h3>
+          <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">About Brahmaputra FloodCast</h3>
         </div>
         <button onclick="closeAboutModal()" class="text-slate-400 hover:text-slate-700 dark:hover:text-white">
           <i data-lucide="x" class="w-5 h-5"></i>
@@ -1520,14 +1556,14 @@
         <p>
           By fusing telemetry from the CWC / NWDP gauge stations with real-time river gradient modeling and ensemble machine learning classifiers, the platform gives disaster authorities an actionable 6-hour advance window before high-water stages breach danger levels.
         </p>
-        <div class="p-3 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60 text-[11px] space-y-1">
-          <div class="font-bold text-slate-900 dark:text-white">Governance & Research Alignment:</div>
+        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60 text-[11px] space-y-1">
+          <div class="font-display font-bold text-slate-900 dark:text-white">Governance & Research Alignment:</div>
           <div>Aligned with ASDMA disaster management protocols and CWC warning standards.</div>
         </div>
       </div>
 
       <div class="flex justify-end pt-2">
-        <button onclick="closeAboutModal()" class="px-4 py-2 rounded-lg text-xs font-semibold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-2xs">
+        <button onclick="closeAboutModal()" class="px-5 py-2 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-2xs">
           Close Window
         </button>
       </div>
@@ -1538,13 +1574,13 @@
   <!-- MODAL: PLATFORM FEATURES -->
   <!-- ========================================================================= -->
   <div id="modal-features" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl max-w-lg w-full p-6 shadow-xl space-y-4 text-slate-800 dark:text-slate-200">
+    <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-xl space-y-4 text-slate-800 dark:text-slate-200">
       <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
         <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-lg bg-gov-800 text-white flex items-center justify-center font-bold text-xs">
-            <i data-lucide="layers" class="w-4 h-4 text-sky-300"></i>
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-sky-600 text-white flex items-center justify-center font-bold text-xs">
+            <i data-lucide="layers" class="w-4 h-4 text-sky-200"></i>
           </div>
-          <h3 class="text-sm font-bold text-slate-900 dark:text-white">Platform Feature Inventory</h3>
+          <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Platform Feature Inventory</h3>
         </div>
         <button onclick="closeFeaturesModal()" class="text-slate-400 hover:text-slate-700 dark:hover:text-white">
           <i data-lucide="x" class="w-5 h-5"></i>
@@ -1553,27 +1589,27 @@
 
       <div class="space-y-3 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
         <div class="grid grid-cols-2 gap-3">
-          <div class="p-3 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60">
-            <div class="font-bold text-slate-900 dark:text-white">6h Advance Predictor</div>
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60">
+            <div class="font-display font-bold text-slate-900 dark:text-white">6h Advance Predictor</div>
             <div class="text-[11px] text-slate-500 mt-0.5">Trained ensemble classifier with 94.2% test accuracy.</div>
           </div>
-          <div class="p-3 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60">
-            <div class="font-bold text-slate-900 dark:text-white">GIS Spatial Mapping</div>
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60">
+            <div class="font-display font-bold text-slate-900 dark:text-white">GIS Spatial Mapping</div>
             <div class="text-[11px] text-slate-500 mt-0.5">Interactive station overlay across Brahmaputra basin.</div>
           </div>
-          <div class="p-3 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60">
-            <div class="font-bold text-slate-900 dark:text-white">Scenario Simulator</div>
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60">
+            <div class="font-display font-bold text-slate-900 dark:text-white">Scenario Simulator</div>
             <div class="text-[11px] text-slate-500 mt-0.5">Interactive sandbox to test custom water levels.</div>
           </div>
-          <div class="p-3 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60">
-            <div class="font-bold text-slate-900 dark:text-white">Historical Telemetry Log</div>
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60">
+            <div class="font-display font-bold text-slate-900 dark:text-white">Historical Telemetry Log</div>
             <div class="text-[11px] text-slate-500 mt-0.5">Complete audit log with one-click CSV dataset export.</div>
           </div>
         </div>
       </div>
 
       <div class="flex justify-end pt-2">
-        <button onclick="closeFeaturesModal()" class="px-4 py-2 rounded-lg text-xs font-semibold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-2xs">
+        <button onclick="closeFeaturesModal()" class="px-5 py-2 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-2xs">
           Dismiss
         </button>
       </div>
@@ -1584,13 +1620,13 @@
   <!-- MODAL: OPERATOR SIGN IN -->
   <!-- ========================================================================= -->
   <div id="modal-signin" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl max-w-sm w-full p-6 shadow-xl space-y-4">
+    <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl max-w-sm w-full p-6 shadow-xl space-y-4">
       <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
         <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-lg bg-gov-800 text-white flex items-center justify-center font-bold text-xs">
-            <i data-lucide="lock" class="w-4 h-4 text-sky-300"></i>
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-sky-600 text-white flex items-center justify-center font-bold text-xs">
+            <i data-lucide="lock" class="w-4 h-4 text-sky-200"></i>
           </div>
-          <h3 class="text-sm font-bold text-slate-900 dark:text-white">Operator Console Authentication</h3>
+          <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Operator Authentication</h3>
         </div>
         <button onclick="closeSignInModal()" class="text-slate-400 hover:text-slate-700 dark:hover:text-white">
           <i data-lucide="x" class="w-5 h-5"></i>
@@ -1600,7 +1636,7 @@
       <div class="space-y-3 text-xs">
         <div>
           <label class="block text-slate-600 dark:text-slate-400 mb-1 font-semibold">Operational Role / Access Profile</label>
-          <select class="w-full p-2.5 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-medium">
+          <select class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-medium">
             <option>District Disaster Management Officer (DDMA)</option>
             <option>Field Hydrologist / Irrigation Engineer</option>
             <option>Public Safety Observer (Read-Only)</option>
@@ -1609,15 +1645,15 @@
 
         <div>
           <label class="block text-slate-600 dark:text-slate-400 mb-1 font-semibold">Operator Identifier</label>
-          <input type="text" value="OPERATOR-DARRANG-01" class="w-full p-2.5 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-mono">
+          <input type="text" value="OPERATOR-DARRANG-01" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-mono">
         </div>
       </div>
 
       <div class="space-y-2 pt-2">
-        <button onclick="confirmSignInAndEnter()" class="w-full py-2.5 rounded-lg text-xs font-bold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-2xs transition-colors">
+        <button onclick="confirmSignInAndEnter()" class="w-full py-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 shadow-md shadow-blue-600/20 transition-all">
           Authenticate & Launch Console
         </button>
-        <button onclick="closeSignInModal()" class="w-full py-2 rounded-lg text-xs font-semibold text-slate-500 hover:text-slate-700 dark:hover:text-white">
+        <button onclick="closeSignInModal()" class="w-full py-2 rounded-xl text-xs font-semibold text-slate-500 hover:text-slate-700 dark:hover:text-white">
           Cancel
         </button>
       </div>
@@ -1628,14 +1664,14 @@
   <!-- MODAL: ALERT DETAIL / INSPECTION DIRECTIVE -->
   <!-- ========================================================================= -->
   <div id="modal-alert-detail" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl max-w-lg w-full p-6 shadow-xl space-y-4 text-slate-800 dark:text-slate-200">
+    <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-xl space-y-4 text-slate-800 dark:text-slate-200">
       <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-lg bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400 flex items-center justify-center font-bold">
-            <i data-lucide="alert-octagon" class="w-4 h-4"></i>
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-400 flex items-center justify-center font-bold">
+            <i data-lucide="alert-octagon" class="w-5 h-5"></i>
           </div>
           <div>
-            <h3 class="text-sm font-bold text-slate-900 dark:text-white">CRITICAL FLOOD BULLETIN</h3>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">CRITICAL FLOOD BULLETIN</h3>
             <p class="text-[10px] text-slate-400 font-mono">Incident Directive: #ALT-2026-0828-99</p>
           </div>
         </div>
@@ -1645,21 +1681,21 @@
       </div>
 
       <div class="space-y-3 text-xs">
-        <div class="grid grid-cols-2 gap-2">
-          <div class="p-2.5 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60">
+        <div class="grid grid-cols-2 gap-2.5">
+          <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60">
             <div class="text-[10px] text-slate-400">Monitoring Station</div>
-            <div class="font-bold text-slate-900 dark:text-white text-xs mt-0.5 truncate">NH15 Fakirpara Tangni</div>
+            <div class="font-display font-bold text-slate-900 dark:text-white text-xs mt-0.5 truncate">NH15 Fakirpara Tangni</div>
           </div>
-          <div class="p-2.5 rounded-lg bg-slate-50 dark:bg-[#17233c] border border-slate-200 dark:border-slate-700/60">
+          <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#16243d] border border-slate-200 dark:border-slate-700/60">
             <div class="text-[10px] text-slate-400">Catchment Sector</div>
-            <div class="font-bold text-slate-900 dark:text-white text-xs mt-0.5">Darrang District, Assam</div>
+            <div class="font-display font-bold text-slate-900 dark:text-white text-xs mt-0.5">Darrang District, Assam</div>
           </div>
         </div>
 
-        <div class="p-3 rounded-lg bg-red-50 dark:bg-red-950/60 border border-red-200 dark:border-red-900 space-y-1.5">
+        <div class="p-3.5 rounded-xl bg-red-50 dark:bg-red-950/60 border border-red-200 dark:border-red-900 space-y-1.5">
           <div class="flex justify-between items-center">
             <span class="text-red-800 dark:text-red-300 font-bold">Prediction: HIGH WATER within 6 hours</span>
-            <span class="px-2 py-0.5 rounded bg-red-700 text-white font-bold text-[10px]">99% PROB</span>
+            <span class="px-2.5 py-0.5 rounded-full bg-red-600 text-white font-bold text-[10px]">99% PROB</span>
           </div>
           <div class="text-[11px] text-slate-700 dark:text-slate-300">
             Severity: <strong class="text-red-600 dark:text-red-400 font-bold">CRITICAL</strong> | Escalation: <strong class="text-amber-600 dark:text-amber-400 font-bold">STATE (ASDMA)</strong>
@@ -1668,17 +1704,17 @@
 
         <div class="space-y-1">
           <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Official Action Directive:</div>
-          <p class="text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-[#17233c] p-3 rounded-lg border border-slate-200 dark:border-slate-700/60 leading-relaxed">
+          <p class="text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-[#16243d] p-3.5 rounded-xl border border-slate-200 dark:border-slate-700/60 leading-relaxed">
             Tangni River stage at NH15 Crossing Fakirpara has exceeded the 60.00m danger threshold (60.31m observed). DEOC emergency response units are advised to initiate vulnerable embankment patrols and place low-lying sector evacuation centers on immediate standby.
           </p>
         </div>
       </div>
 
       <div class="pt-2 flex justify-between gap-2">
-        <button onclick="navigateAppPage('map'); closeAlertDetailModal();" class="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700">
+        <button onclick="navigateAppPage('map'); closeAlertDetailModal();" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700">
           View on GIS Map
         </button>
-        <button onclick="closeAlertDetailModal()" class="px-4 py-2 rounded-lg text-xs font-bold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-2xs">
+        <button onclick="closeAlertDetailModal()" class="px-5 py-2 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-2xs">
           Acknowledge & Close
         </button>
       </div>
@@ -1689,21 +1725,21 @@
   <!-- MODAL: LOGOUT CONFIRMATION -->
   <!-- ========================================================================= -->
   <div id="modal-logout" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white dark:bg-[#111a2e] border border-slate-200 dark:border-slate-800 rounded-xl max-w-sm w-full p-6 shadow-xl space-y-4 text-center">
-      <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 mx-auto flex items-center justify-center">
+    <div class="bg-white dark:bg-[#0f1a2e] border border-slate-200 dark:border-slate-800 rounded-2xl max-w-sm w-full p-6 shadow-xl space-y-4 text-center">
+      <div class="w-12 h-12 rounded-2xl bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 mx-auto flex items-center justify-center">
         <i data-lucide="log-out" class="w-6 h-6"></i>
       </div>
 
       <div class="space-y-1">
-        <h3 class="text-base font-bold text-slate-900 dark:text-white">Exit Operational Console?</h3>
+        <h3 class="font-display text-lg font-bold text-slate-900 dark:text-white">Exit Operational Console?</h3>
         <p class="text-xs text-slate-500 dark:text-slate-400">Return to the public information portal. Your session preferences will be preserved.</p>
       </div>
 
       <div class="space-y-2 pt-2">
-        <button onclick="confirmLogoutAndReturn()" class="w-full py-2.5 rounded-lg text-xs font-bold text-white bg-gov-800 hover:bg-gov-900 dark:bg-sky-600 dark:hover:bg-sky-500 shadow-2xs transition-colors">
+        <button onclick="confirmLogoutAndReturn()" class="w-full py-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-600 hover:from-blue-600 hover:to-indigo-500 shadow-md shadow-blue-600/20 transition-all">
           Confirm & Return to Home
         </button>
-        <button onclick="closeLogoutModal()" class="w-full py-2 rounded-lg text-xs font-semibold text-slate-500 hover:text-slate-700 dark:hover:text-white">
+        <button onclick="closeLogoutModal()" class="w-full py-2 rounded-xl text-xs font-semibold text-slate-500 hover:text-slate-700 dark:hover:text-white">
           Cancel
         </button>
       </div>

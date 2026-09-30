@@ -1,14 +1,19 @@
-/* FloodSense AI — Enterprise / Government-Grade Design System */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+/* ========================================================================= */
+/* Brahmaputra FloodCast — Vibrant Institutional & Modern Design System      */
+/* ========================================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'Space Grotesk', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   
-  /* Institutional Brand Palette */
+  /* Vibrant Institutional Brand Palette */
   --gov-primary: #153e67;
   --gov-primary-hover: #0f2c4a;
   --gov-secondary: #0284c7;
+  --vibrant-blue: #2563eb;
+  --vibrant-sky: #0ea5e9;
   
   /* Light Mode Tokens */
   --bg-page: #f8fafc;
@@ -17,8 +22,8 @@
   --border-color: #e2e8f0;
   --border-strong: #cbd5e1;
   --text-main: #0f172a;
-  --text-muted: #64748b;
-  --text-subtle: #94a3b8;
+  --text-muted: #475569;
+  --text-subtle: #64748b;
   
   /* Semantic Badges */
   --risk-low: #15803d;
@@ -29,9 +34,9 @@
 
 .dark {
   /* Dark Mode Tokens */
-  --bg-page: #0a101d;
-  --bg-surface: #111a2e;
-  --bg-surface-subtle: #17233c;
+  --bg-page: #080e1b;
+  --bg-surface: #0f1a2e;
+  --bg-surface-subtle: #16243d;
   --border-color: #1e2e4a;
   --border-strong: #2a3f64;
   --text-main: #f8fafc;
@@ -43,14 +48,34 @@ body {
   font-family: var(--font-sans);
   background-color: var(--bg-page);
   color: var(--text-main);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: -0.011em;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
 }
 
 .font-mono {
   font-family: var(--font-mono);
+  letter-spacing: -0.015em;
+  font-variant-numeric: tabular-nums;
 }
 
-/* Custom Institutional Scrollbars */
+/* Glassmorphism Header Effects */
+.glass-header {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.dark .glass-header {
+  background: rgba(12, 21, 39, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom Scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -60,7 +85,7 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
-  border-radius: 4px;
+  border-radius: 9999px;
 }
 .dark ::-webkit-scrollbar-thumb {
   background: #1e2e4a;
@@ -72,13 +97,13 @@ body {
   background: #334e7a;
 }
 
-/* Leaflet Container Professional Override */
+/* Leaflet Container Professional Styling */
 .leaflet-container {
   font-family: var(--font-sans);
   background: #f1f5f9;
 }
 .dark .leaflet-container {
-  background: #0a101d;
+  background: #080e1b;
 }
 
 /* Custom Leaflet Tooltip / Popup Styling */
@@ -86,9 +111,10 @@ body {
   background: var(--bg-surface) !important;
   color: var(--text-main) !important;
   border: 1px solid var(--border-color);
-  border-radius: 8px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-  padding: 4px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15) !important;
+  padding: 6px !important;
+  font-family: var(--font-sans) !important;
 }
 .leaflet-popup-tip {
   background: var(--bg-surface) !important;
@@ -100,9 +126,14 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   outline-offset: 2px;
 }
 
-/* Clean Transitions */
-.transition-smooth {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+/* Micro-animations */
+@keyframes subtlePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.08); }
+}
+
+.animate-subtle-pulse {
+  animation: subtlePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 /* Print Optimization */
