@@ -5,7 +5,7 @@ from backend.app.database import Base
 class PredictionRecord(Base):
     __tablename__ = "predictions"
 
-    prediction_id = Column(BigInteger, primary_key=True, autoincrement=True)
+    prediction_id = Column(BigInteger().with_variant(Integer, "sqlite"), primary_key=True, autoincrement=True)
     station = Column(String(150), nullable=False)
     district = Column(String(100), nullable=False)
     state = Column(String(100), nullable=False)

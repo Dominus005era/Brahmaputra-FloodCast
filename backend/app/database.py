@@ -39,6 +39,21 @@ def init_database_engine():
 
 engine = init_database_engine()
 
+def ensure_sqlite_compatibility(eng):
+    if eng.dialect.name == "sqlite":
+        try:
+            with eng.connect() as conn:
+                res = conn.exec_driver_sql("PRAGMA table_info(predictions);").fetchall()
+                if res:
+                    pk_col = next((col for col in res if col[1] == "prediction_id"), None)
+                    if pk_col and "BIGINT" in str(pk_col[2]).upper():
+                        logger.warning("Auto-migrating SQLite predictions table to standard INTEGER PRIMARY KEY...")
+                        conn.exec_driver_sql("DROP TABLE IF EXISTS predictions;")
+        except Exception as err:
+            logger.warning(f"SQLite migration check notice: {err}")
+
+ensure_sqlite_compatibility(engine)
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
