@@ -8,6 +8,9 @@ logger = logging.getLogger("FloodSenseDB")
 def init_database_engine():
     # 1. If explicit DATABASE_URL provided via environment (e.g. Render / Cloud)
     env_url = settings.DATABASE_URL
+    if env_url.startswith("postgres://"):
+        env_url = env_url.replace("postgres://", "postgresql://", 1)
+
     if env_url.startswith("sqlite"):
         logger.info(f"Using SQLite database: {env_url}")
         return create_engine(env_url, connect_args={"check_same_thread": False})

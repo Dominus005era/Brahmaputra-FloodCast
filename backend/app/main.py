@@ -17,15 +17,24 @@ logger = logging.getLogger("FloodSenseApp")
 # Create tables if not exists
 Base.metadata.create_all(bind=engine)
 
+def _sync_ingest_job():
+    try:
+        db = SessionLocal()
+        try:
+            logger.info("Executing background live telemetry sync for TODAY...")
+            ingest_live_prediction(db)
+        finally:
+            db.close()
+    except Exception as e:
+        logger.error(f"Error in background ingestion job: {e}")
+
 async def periodic_ingestion_worker():
     logger.info("Background Telemetry Ingestion Worker started.")
+    # Small pause allows Uvicorn to complete port binding and respond to health checks instantly
+    await asyncio.sleep(0.5)
     while True:
         try:
-            db = SessionLocal()
-            try:
-                ingest_live_prediction(db)
-            finally:
-                db.close()
+            await asyncio.to_thread(_sync_ingest_job)
         except Exception as e:
             logger.error(f"Error in background ingestion loop: {e}")
         
@@ -33,21 +42,14 @@ async def periodic_ingestion_worker():
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("Starting FloodSense FastAPI Server & SQL Server Sync...")
-    # Perform immediate synchronous live ingestion on startup so DB is never stale or showing past dates!
-    try:
-        db = SessionLocal()
-        try:
-            logger.info("Executing initial live telemetry sync for TODAY...")
-            ingest_live_prediction(db)
-        finally:
-            db.close()
-    except Exception as e:
-        logger.warning(f"Initial startup ingestion warning: {e}")
-
+    logger.info("Starting FloodSense FastAPI Server & Worker...")
     worker_task = asyncio.create_task(periodic_ingestion_worker())
     yield
     worker_task.cancel()
+    try:
+        await worker_task
+    except asyncio.CancelledError:
+        pass
     logger.info("FloodSense Server shutting down...")
 
 app = FastAPI(
